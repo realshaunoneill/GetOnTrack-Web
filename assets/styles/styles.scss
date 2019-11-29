@@ -2,3 +2,22 @@
 @import "../../node_modules/bulma/bulma.sass";
 
 @import "variables";
+
+.gradient {
+  animation: gradient 4s infinite;
+}
+
+@keyframes gradient {
+  0%, 100% {
+    background-color: $dublinBusYellow;
+  }
+  20%, 80% {
+    background-color: $irishRailGreen;
+  }
+  40%, 60% {
+    background-color: $luasPurple;
+  }
+  50% {
+    background-color: $dublinBikesBlue;
+  }
+}
