@@ -2,9 +2,10 @@
 @import "../../node_modules/bulma/bulma.sass";
 
 @import "variables";
+@import "components/header";
 
 .gradient {
-  animation: gradient 4s infinite;
+  animation: gradient 15s infinite;
 }
 
 @keyframes gradient {

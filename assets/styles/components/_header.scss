@@ -1,0 +1,23 @@
+
+.hero {
+  z-index: -5;
+
+  .title {
+    margin-bottom: 0;
+  }
+}
+
+.header-title {
+  line-height: 4rem;
+
+  .name {
+    font-size: 4rem;
+    font-family: "Helvetica Neue", sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+}
+
+.header-subtitle {
+  font-family: sans-serif;
+}
