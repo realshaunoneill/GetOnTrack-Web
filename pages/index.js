@@ -3,9 +3,6 @@ import DefaultLayout from "../layouts/default";
 
 const Index = () => (
   <DefaultLayout title="Home">
-      <div>
-          hi
-      </div>
   </DefaultLayout>
 );
 

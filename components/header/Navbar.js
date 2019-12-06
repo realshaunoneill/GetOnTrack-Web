@@ -13,7 +13,7 @@ const Navbar = () => {
                 <div className="navbar-brand">
                     <Link href="/">
                         <a className={`${isDropdownOpen ? 'is-active' : ''} navbar-item navbar-title`}>
-
+                            Transport Ireland+
                         </a>
                     </Link>
 

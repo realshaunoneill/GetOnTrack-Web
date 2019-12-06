@@ -1,6 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Navbar from "./Navbar";
+import ServiceBox from "./ServiceBox";
 
 const Header = () => (
     <section className="hero is-fullheight gradient">
@@ -8,12 +8,25 @@ const Header = () => (
             <Navbar/>
         </div>
         <div className="hero-body">
+            <div className="container">
+                <div className="header">
+                    <h1 className="header-title">
+                        Transport Ireland+
+                    </h1>
+                    <h2 className="header-subtitle">
+                        &bull;&nbsp;Your premium resource for public transport information
+                    </h2>
+                </div>
+            </div>
+        </div>
+        <div className="hero-foot">
             <div className="container has-text-centered">
-                <h1 className="tile">
-                    <span className="header-title">
-
-                    </span>
-                </h1>
+                <div className="columns">
+                    <ServiceBox title="Dublin Bus"/>
+                    <ServiceBox title="Irish Rail"/>
+                    <ServiceBox title="Luas"/>
+                    <ServiceBox title="Dublin Bikes"/>
+                </div>
             </div>
         </div>
     </section>

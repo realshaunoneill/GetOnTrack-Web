@@ -2,7 +2,10 @@
 @import "../../node_modules/bulma/bulma.sass";
 
 @import "variables";
+
 @import "components/header";
+@import "components/navbar";
+@import "components/serviceBox";
 
 .gradient {
   animation: gradient 15s infinite;
@@ -10,10 +13,10 @@
 
 @keyframes gradient {
   0%, 100% {
-    background-color: $dublinBusYellow;
+    background-color: $dublinBusYellowDark;
   }
   20%, 80% {
-    background-color: $irishRailGreen;
+    background-color: $irishRailGreenDark;
   }
   40%, 60% {
     background-color: $luasPurple;

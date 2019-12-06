@@ -1,23 +1,24 @@
-
 .hero {
   z-index: -5;
 
-  .title {
-    margin-bottom: 0;
+  .navbar {
+    background-color: whitesmoke;
   }
 }
 
-.header-title {
-  line-height: 4rem;
+.header {
+  font-family: "Helvetica Neue", sans-serif;
+  color: whitesmoke;
 
-  .name {
+  .header-title {
+    line-height: 4rem;
     font-size: 4rem;
-    font-family: "Helvetica Neue", sans-serif;
     font-weight: bold;
     text-transform: uppercase;
+    margin-bottom: 1rem;
   }
-}
 
-.header-subtitle {
-  font-family: sans-serif;
+  .header-subtitle {
+    padding-left: 3rem;
+  }
 }

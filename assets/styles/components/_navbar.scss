@@ -1,0 +1,15 @@
+.navbar {
+  .navbar-brand {
+    letter-spacing: 2px;
+    font-size: 1.5rem;
+    font-weight: bold;
+
+    .navbar-burger {
+      color: whitesmoke;
+    }
+  }
+
+  .nuxt-link-exact-active:not(.navbar-title) {
+
+  }
+}
