@@ -10,7 +10,7 @@ const Header = () => (
             <div className="container">
                 <div className="header">
                     <h1 className="header-title">
-                        Transport Ireland+
+                        Get OnTrack
                     </h1>
                     <h2 className="header-subtitle">
                         &bull;&nbsp;Your premium resource for public transport information

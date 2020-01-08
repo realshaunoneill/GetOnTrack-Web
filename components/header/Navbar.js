@@ -1,20 +1,21 @@
 import React, {useCallback, useState} from 'react';
+import PropTypes from 'prop-types';
 import Link from 'next/link'
 import Login from "./Login";
 
-const Navbar = () => {
+const Navbar = ({className}) => {
 
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
     const toggleDropdown = useCallback(() => () => setIsDropdownOpen(!isDropdownOpen), [isDropdownOpen]);
 
     return (
-        <nav className="navbar">
+        <nav className={`${className} navbar is-fixed-top`}>
             <div className="container">
                 <div className="navbar-brand">
                     <Link href="/">
                         <a className={`${isDropdownOpen ? 'is-active' : ''} navbar-item navbar-title`}>
-                            Transport Ireland+
+                            GetOnTrack
                         </a>
                     </Link>
 
@@ -27,9 +28,11 @@ const Navbar = () => {
 
                 <div className="navbar-menu" id="nav-bar">
                     <div className="navbar-end">
-                        <div className="navbar-item">
-                            <Login/>
-                        </div>
+                        <Link href="/timetables">
+                            <a className="navbar-item">
+                                Timetables
+                            </a>
+                        </Link>
                         <div className="navbar-item">
                             <Link href="/support">
                                 <a className="button supportButton is-outlined">
@@ -37,11 +40,18 @@ const Navbar = () => {
                                 </a>
                             </Link>
                         </div>
+                        <div className="navbar-item">
+                            <Login/>
+                        </div>
                     </div>
                 </div>
             </div>
         </nav>
     )
+};
+
+Navbar.propTypes = {
+    className: PropTypes.string
 };
 
 export default Navbar;

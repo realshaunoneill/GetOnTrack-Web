@@ -1,24 +1,24 @@
-import React, { Fragment } from 'react';
+import React, {Fragment} from 'react';
 import PropTypes from 'prop-types';
 
 import Meta from "../components/Meta";
-import Header from "../components/header/Header";
 
 import styles from '../assets/styles/styles.scss';
 import Footer from "../components/footer/Footer";
+import Navbar from "../components/header/Navbar";
 
-const DefaultLayout = ({title, children}) => (
+const NoHeaderLayout = ({title, children}) => (
     <Fragment>
         <Meta title={title}/>
-        <Header/>
+        <Navbar className="styledBackground"/>
         {children}
         <Footer/>
     </Fragment>
 );
 
-DefaultLayout.propTypes = {
+NoHeaderLayout.propTypes = {
     title: PropTypes.string.isRequired,
     children: PropTypes.node.isRequired
 };
 
-export default DefaultLayout;
+export default NoHeaderLayout;
