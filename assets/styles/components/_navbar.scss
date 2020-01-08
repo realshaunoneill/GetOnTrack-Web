@@ -25,6 +25,18 @@
         color: white;
       }
     }
+
+    .supportButton {
+      color: $colorSecondry;
+      border-color: $colorSecondry;
+      background-color: transparent;
+      font-weight: bold;
+
+      &:hover {
+        background-color: $colorSecondry;
+        color: white;
+      }
+    }
   }
 
   .nuxt-link-exact-active:not(.navbar-title) {

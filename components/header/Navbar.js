@@ -1,5 +1,6 @@
 import React, {useCallback, useState} from 'react';
 import Link from 'next/link'
+import Login from "./Login";
 
 const Navbar = () => {
 
@@ -27,7 +28,14 @@ const Navbar = () => {
                 <div className="navbar-menu" id="nav-bar">
                     <div className="navbar-end">
                         <div className="navbar-item">
-                            <a className="button loginButton is-outlined">Login</a>
+                            <Login/>
+                        </div>
+                        <div className="navbar-item">
+                            <Link href="/support">
+                                <a className="button supportButton is-outlined">
+                                    Support
+                                </a>
+                            </Link>
                         </div>
                     </div>
                 </div>

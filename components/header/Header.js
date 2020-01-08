@@ -3,7 +3,7 @@ import Navbar from "./Navbar";
 import ServiceBox from "./ServiceBox";
 
 const Header = () => (
-    <section className="hero is-fullheight gradient">
+    <section className="hero is-fullheight styledBackground">
         <div className="hero-head">
             <Navbar/>
         </div>
