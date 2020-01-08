@@ -15,7 +15,7 @@ const Navbar = ({className}) => {
                 <div className="navbar-brand">
                     <Link href="/">
                         <a className={`${isDropdownOpen ? 'is-active' : ''} navbar-item navbar-title`}>
-                            GetOnTrack
+                            PlaceHolderNameHere
                         </a>
                     </Link>
 
