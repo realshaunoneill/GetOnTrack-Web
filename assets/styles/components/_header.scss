@@ -1,9 +1,5 @@
 .hero {
   z-index: -5;
-
-  .navbar {
-    background-color: whitesmoke;
-  }
 }
 
 .header {
@@ -12,13 +8,14 @@
 
   .header-title {
     line-height: 4rem;
-    font-size: 4rem;
+    font-size: 5rem;
     font-weight: bold;
     text-transform: uppercase;
     margin-bottom: 1rem;
   }
 
   .header-subtitle {
+    font-size: 1.5rem;
     padding-left: 3rem;
   }
 }

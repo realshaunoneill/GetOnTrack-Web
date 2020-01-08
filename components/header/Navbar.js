@@ -1,11 +1,11 @@
-import React, {useState, useCallback} from 'react';
+import React, {useCallback, useState} from 'react';
 import Link from 'next/link'
 
 const Navbar = () => {
 
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-    const toggleDropdown = useCallback(() => () => setIsDropdownOpen(!isDropdownOpen), [isDropdownOpen])
+    const toggleDropdown = useCallback(() => () => setIsDropdownOpen(!isDropdownOpen), [isDropdownOpen]);
 
     return (
         <nav className="navbar">
@@ -26,14 +26,14 @@ const Navbar = () => {
 
                 <div className="navbar-menu" id="nav-bar">
                     <div className="navbar-end">
-                        <Link href="/about">
-                            <a className="navbar-item">Links here</a>
-                        </Link>
+                        <div className="navbar-item">
+                            <a className="button loginButton is-outlined">Login</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </nav>
     )
-}
+};
 
 export default Navbar;

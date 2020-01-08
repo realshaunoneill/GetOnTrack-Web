@@ -1,4 +1,8 @@
 .navbar {
+  .navbar-item {
+    color: white;
+  }
+
   .navbar-brand {
     letter-spacing: 2px;
     font-size: 1.5rem;
@@ -6,6 +10,20 @@
 
     .navbar-burger {
       color: whitesmoke;
+    }
+  }
+
+  .navbar-end {
+    .loginButton {
+      color: $colorAccent;
+      border-color: $colorAccent;
+      background-color: transparent;
+      font-weight: bold;
+
+      &:hover {
+        background-color: $colorAccent;
+        color: white;
+      }
     }
   }
 

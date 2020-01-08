@@ -22,10 +22,10 @@ const Header = () => (
         <div className="hero-foot">
             <div className="container has-text-centered">
                 <div className="columns">
-                    <ServiceBox title="Dublin Bus"/>
-                    <ServiceBox title="Irish Rail"/>
-                    <ServiceBox title="Luas"/>
-                    <ServiceBox title="Dublin Bikes"/>
+                    <ServiceBox title="Dublin Bus" type="dublinBus"/>
+                    <ServiceBox title="Irish Rail" type="irishRail"/>
+                    <ServiceBox title="Luas" type="luas"/>
+                    <ServiceBox title="Dublin Bikes" type="dublinBikes"/>
                 </div>
             </div>
         </div>

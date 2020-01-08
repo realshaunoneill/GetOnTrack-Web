@@ -8,20 +8,5 @@
 @import "components/serviceBox";
 
 .gradient {
-  animation: gradient 15s infinite;
-}
-
-@keyframes gradient {
-  0%, 100% {
-    background-color: $dublinBusYellowDark;
-  }
-  20%, 80% {
-    background-color: $irishRailGreenDark;
-  }
-  40%, 60% {
-    background-color: $luasPurple;
-  }
-  50% {
-    background-color: $dublinBikesBlue;
-  }
+  background: linear-gradient(0deg, $colorPrimaryLight, $colorPrimary), linear-gradient(90deg, $colorAccent, $colorSecondry);
 }
