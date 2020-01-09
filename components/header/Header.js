@@ -2,7 +2,7 @@ import React from 'react';
 import Navbar from "./Navbar";
 
 const Header = () => (
-    <section className="hero is-large styledBackground">
+    <section className="hero is-medium styledBackground">
         <div className="hero-head">
             <Navbar/>
         </div>
