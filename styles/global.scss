@@ -1,3 +1,37 @@
 @import "~bulma/bulma.sass";
 @import "./fonts.css";
 @import "./_variables";
+
+
+@mixin underline($colour, $name) {
+    $faded-colour: lighten(adjust-hue($colour, 20), 20%);
+    .underline-look#{$name} {
+        border-bottom: 4px solid $faded-colour;
+        box-shadow: inset 0 -4px 0 $faded-colour;
+    }
+
+    a.underline-look#{$name} {
+        transition: background 150ms ease;
+        color: #363636;
+    }
+
+    a.underline-look#{$name}:hover {
+        background-color: $faded-colour;
+        border-bottom: 4px solid transparent;
+        box-shadow: inset 0 -4px 0 transparent;
+    }
+}
+
+@include underline($colour-blue, "");
+@include underline($colour-red, ".red");
+@include underline($colour-orange, ".orange");
+@include underline($colour-yellow, ".yellow");
+@include underline($colour-green, ".green");
+@include underline($colour-blue, ".blue");
+@include underline($colour-grey, ".grey");
+
+/*.underline-look {
+    border-bottom: 4px solid rgba($color-green, 0.3);
+    box-shadow: inset 0 -4px 0 rgba($color-green, 0.3);
+    transition: background 150ms ease;
+}*/

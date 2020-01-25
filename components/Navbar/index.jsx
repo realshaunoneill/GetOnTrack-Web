@@ -16,6 +16,8 @@ const NavbarLink = ({ href, minor = false, children }) => {
     );
 }
 
+const HeaderSpace = () => <span style={{ fontSize: "40px" }}> </span>;
+
 const Navbar = () => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -24,7 +26,7 @@ const Navbar = () => {
         <nav className="navbar is-fixed-top is-white is-spaced">
             <div className="navbar-head">
                 <NavbarLink href="/">
-                    <Header size={3}>GetOnTrack</Header>
+                    <Header size={3}><b>Get<HeaderSpace />On<HeaderSpace />Track</b></Header>
                 </NavbarLink>
                 <a class="navbar-burger" role="button" aria-label="menu" aria-expanded="false" onClick={toggleDropdown}>
                     <span aria-hidden="true"></span>
