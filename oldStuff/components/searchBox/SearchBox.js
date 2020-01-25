@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState} from "react";
 import ServiceBox from "../header/ServiceBox";
 
 const SearchBox = () => {
@@ -33,7 +33,7 @@ const SearchBox = () => {
                             <input className="input is-large" placeholder="Start typing to search..." type="text"/>
                         </div>
                         <div className="control">
-                            <a className="button is-info is-large">Search</a>
+                            <a className="button is-info is-outlined searchButton is-large">Search</a>
                         </div>
                     </div>
                 </div>

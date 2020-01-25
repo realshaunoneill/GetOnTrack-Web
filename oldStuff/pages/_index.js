@@ -1,6 +1,6 @@
 import React from 'react'
 import DefaultLayout from "../layouts/default";
-import SearchBox from "../components/searchBox/SearchBox";
+import SearchBox from "../oldStuff/components/searchBox/SearchBox";
 
 const Index = () => (
   <DefaultLayout title="Home">

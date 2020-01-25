@@ -1,9 +1,9 @@
-import React, {useCallback, useState} from 'react';
-import PropTypes from 'prop-types';
-import Link from 'next/link'
+import React, { useCallback, useState } from "react";
+import PropTypes from "prop-types";
+import Link from "next/link"
 import Login from "./Login";
 
-const Navbar = ({className}) => {
+const Navbar = ({ className = "" }) => {
 
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -14,15 +14,15 @@ const Navbar = ({className}) => {
             <div className="container">
                 <div className="navbar-brand">
                     <Link href="/">
-                        <a className={`${isDropdownOpen ? 'is-active' : ''} navbar-item navbar-title`}>
+                        <a className={`${isDropdownOpen ? "is-active" : ""} navbar-item navbar-title`}>
                             PlaceHolderNameHere
                         </a>
                     </Link>
 
                     <div className="navbar-burger burger" id="burgerToggle" onClick={toggleDropdown}>
-                        <span aria-hidden="true"/>
-                        <span aria-hidden="true"/>
-                        <span aria-hidden="true"/>
+                        <span aria-hidden="true" />
+                        <span aria-hidden="true" />
+                        <span aria-hidden="true" />
                     </div>
                 </div>
 
@@ -41,7 +41,7 @@ const Navbar = ({className}) => {
                             </Link>
                         </div>
                         <div className="navbar-item">
-                            <Login/>
+                            <Login />
                         </div>
                     </div>
                 </div>

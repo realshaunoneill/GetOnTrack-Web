@@ -1,0 +1,41 @@
+.serviceBox {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  border-radius: 0px;
+  color: #363636;
+  transition: .275s cubic-bezier(0.215, 0.610, 0.355, 1);
+
+  &:hover {
+    filter: none !important;
+    background-color: $dublinBusYellow !important;
+    color: whitesmoke !important;
+    transition: .275s cubic-bezier(0.215, 0.610, 0.355, 1);
+  }
+
+  &.dublinBus {
+    color: #363636;
+    background-color: whitesmoke;
+    filter: drop-shadow(6px 6px 0px $dublinBusYellow);
+    border: none;
+  }
+
+  &.irishRail {
+    background-color: $irishRailGreen;
+  }
+
+  &.luas {
+    background-color: $luasPurple;
+  }
+
+  &.dublinBikes {
+    background-color: $dublinBikesBlue;
+  }
+
+  .service-title {
+    font-size: 1.5rem;
+    font-weight: normal;
+  }
+}

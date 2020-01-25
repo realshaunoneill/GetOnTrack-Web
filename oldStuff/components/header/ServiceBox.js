@@ -1,7 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-const ServiceBox = ({title, type}) => (
+const ServiceBox = ({ title, type }) => (
     <div className={`${type} column serviceBox`}>
         <span className="service-title">
             {title}

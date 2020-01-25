@@ -1,0 +1,23 @@
+.searchBox {
+  .field {
+    justify-content: center;
+  }
+
+  .control {
+    filter: drop-shadow(5px 5px 0px $colorSecondry);
+    border: none;
+    margin: 2% 0 0;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-radius: 0px;
+  }
+
+  .select select {
+    border-radius: 0px !important;
+  }
+
+  .searchButton {
+    background-color: white !important;
+    border-radius: 0;
+  }
+}
