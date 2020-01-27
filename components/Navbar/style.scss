@@ -2,6 +2,10 @@
 
 $animate: all 0.2s ease-in-out;
 
+.navbar.is-white .navbar-brand > a.navbar-item.is-active {
+    background-color: transparent !important;
+}
+
 .minor-nav-item {
     font-size: 2.25rem;
     text-align: center;
@@ -10,6 +14,7 @@ $animate: all 0.2s ease-in-out;
     font-family: "Nunito Sans", sans-serif;
     transition: $animate;
     position: relative;
+
     &:before,
     &:after {
         content: "";
