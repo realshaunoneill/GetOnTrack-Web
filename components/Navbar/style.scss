@@ -19,9 +19,9 @@ $animate: all 0.2s ease-in-out;
     &:after {
         content: "";
         position: absolute;
-        bottom: -10px;
+        bottom: 4px;
         width: 0px;
-        height: 5px;
+        height: 7px;
         margin: 5px 0 0;
         transition: $animate;
         transition-duration: 0.5s;
@@ -41,7 +41,7 @@ $animate: all 0.2s ease-in-out;
         background-color: white !important;
         &:before,
         &:after {
-            width: 47.5%;
+            width: 43%;
             opacity: 1;
         }
     }

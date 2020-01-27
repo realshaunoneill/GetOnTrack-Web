@@ -19,6 +19,14 @@ const Index = () => (
                 <br />
                 <br />
                 <br />
+                <div className="columns searchColumns">
+                    <div className="column is-two-fifths has-text-right">
+                        <a className="button is-medium" style={{ border: "none", paddingRight: 0, cursor: "default" }}>Choose your service:</a>
+                    </div>
+                    <div className="column">
+                        <a className="button is-medium">A dropdown button</a>
+                    </div>
+                </div>
                 <br />
                 <br />
                 <br />
