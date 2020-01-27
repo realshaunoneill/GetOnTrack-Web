@@ -17,15 +17,15 @@ const Index = () => (
                 <br />
                 <SearchBox />
                 <br />
+                {/* TODO: If on MacOS put the word return in brackets next to enter. */}
+                <div className="has-text-centered"><i>Hint: Press enter to search</i></div>
                 <br />
                 <br />
-                <div className="columns searchColumns">
-                    <div className="column is-two-fifths has-text-right">
-                        <a className="button is-medium" style={{ border: "none", paddingRight: 0, cursor: "default" }}>Choose your service:</a>
-                    </div>
-                    <div className="column">
-                        <a className="button is-medium">A dropdown button</a>
-                    </div>
+                <div className="has-text-centered">
+                    <a className="button is-medium" style={{ border: "none", cursor: "default" }}>Choose your service:</a>
+                    <a className="button is-medium">A dropdown button</a>
+                    {/* I'm drunk on Apple Juice, this is awful and I don't deserve to know anything about anything because of this */}
+                    <a className="button is-medium" style={{ border: "none", color: "white", cursor: "default" }}>Choose your service:</a>
                 </div>
                 <br />
                 <br />
