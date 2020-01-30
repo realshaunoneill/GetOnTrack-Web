@@ -8,12 +8,13 @@
     "start": "next start"
   },
   "dependencies": {
-    "next": "9.1.4",
-    "react": "16.12.0",
-    "react-dom": "16.12.0",
+    "@zeit/next-sass": "^1.0.1",
     "bulma": "^0.7.5",
+    "jsonwebtoken": "^8.5.1",
+    "next": "9.1.4",
     "node-sass": "^4.12.0",
     "prop-types": "latest",
-    "@zeit/next-sass": "^1.0.1"
+    "react": "16.12.0",
+    "react-dom": "16.12.0"
   }
 }
