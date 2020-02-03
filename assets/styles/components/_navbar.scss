@@ -1,7 +1,6 @@
 .navbar {
-  .navbar-item {
-    color: white;
-  }
+  margin-left: 2rem;
+  margin-right: 2rem;
 
   .navbar-brand {
     letter-spacing: 2px;
@@ -37,9 +36,5 @@
         color: white;
       }
     }
-  }
-
-  .nuxt-link-exact-active:not(.navbar-title) {
-
   }
 }

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Meta from "../components/Meta";
 
 import styles from '../assets/styles/styles.scss';
-import Navbar from "../components/header/Navbar";
+import Navbar from "../components/navbar/Navbar";
 
 const NoHeaderLayout = ({title, children}) => (
     <Fragment>
