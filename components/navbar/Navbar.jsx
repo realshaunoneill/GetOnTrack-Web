@@ -1,7 +1,7 @@
 import React, {useCallback, useState} from 'react';
 import PropTypes from 'prop-types';
 import Link from 'next/link'
-import Login from "../header/Login";
+import Login from "./Login";
 
 const Navbar = () => {
 
@@ -10,7 +10,7 @@ const Navbar = () => {
     const toggleDropdown = useCallback(() => () => setIsDropdownOpen(!isDropdownOpen), [isDropdownOpen]);
 
     return (
-        <nav className={`navbar`}>
+        <nav className="navbar is-fixed-top">
             <div className="navbar-brand">
                 <Link href="/">
                     <a className={`${isDropdownOpen ? 'is-active' : ''} navbar-item navbar-title`}>
