@@ -13,9 +13,6 @@ html, body, #__next, .columns {
   margin: 0;
 }
 
-.columnWrapper {
-  height: 100% !important;
-}
 .columnInfo {
   margin-left: 2rem;
   margin-top: 10rem;
@@ -24,4 +21,17 @@ html, body, #__next, .columns {
 .columnMap {
   width: 100% !important;
   background-color: red;
+}
+
+.transportFooter {
+  position: fixed;
+  width: 100%;
+  bottom: 10rem;
+
+  .transportFooterContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: green;
+  }
 }

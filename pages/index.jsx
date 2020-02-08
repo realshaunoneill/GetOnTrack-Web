@@ -16,11 +16,20 @@ const Index = () => (
                 <div className="fancySearchBox control has-icons-right">
                     <input className="input is-large" type="text" placeholder="Where do you want to go?"/>
                     <span className="magnifSearch icon is-medium is-right">
-                            <i data-feather="search"/>
-                        </span>
+                        <i data-feather="search"/>
+                    </span>
                 </div>
             </div>
             <div className="column is-half is-hidden-mobile columnMap">
+            </div>
+
+            <div className="transportFooter is-hidden-mobile">
+                <div className="container">
+                    <b>CHOOSE TRANSPORT</b>
+                    <div className="transportFooterContainer">
+                        THIS WILL BE THE TRANSPORT TYPES AT BOTTOM
+                    </div>
+                </div>
             </div>
         </div>
     </DefaultLayout>

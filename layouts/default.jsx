@@ -10,9 +10,7 @@ const DefaultLayout = ({title, children}) => (
     <Fragment>
         <Meta title={title}/>
         <Navbar/>
-        <div className="columnWrapper">
-            {children}
-        </div>
+        {children}
     </Fragment>
 );
 
