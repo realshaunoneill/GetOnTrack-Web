@@ -1,6 +1,7 @@
 import React from 'react'
 import DefaultLayout from "../layouts/default";
 import TransportItem from "../components/TransportItem";
+import GoogleMap from '../components/map/GoogleMap';
 
 // Import Icons here for now, will move to component later
 import busIcon from '../assets/img/bus.svg';
@@ -28,6 +29,7 @@ const Index = () => (
                 </div>
             </div>
             <div className="column is-half is-hidden-mobile columnMap">
+                <GoogleMap/>
             </div>
 
             <div className="transportFooter is-hidden-mobile">
