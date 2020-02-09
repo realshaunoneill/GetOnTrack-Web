@@ -1,5 +1,12 @@
 import React from 'react'
 import DefaultLayout from "../layouts/default";
+import TransportItem from "../components/TransportItem";
+
+// Import Icons here for now, will move to component later
+import busIcon from '../assets/img/bus.svg';
+import railIcon from '../assets/img/rail.svg';
+import luasIcon from '../assets/img/luas.svg';
+import bikeIcon from '../assets/img/bike.svg';
 
 const Index = () => (
     <DefaultLayout title="Home">
@@ -24,11 +31,12 @@ const Index = () => (
             </div>
 
             <div className="transportFooter is-hidden-mobile">
-                <div className="container">
-                    <b>CHOOSE TRANSPORT</b>
-                    <div className="transportFooterContainer">
-                        THIS WILL BE THE TRANSPORT TYPES AT BOTTOM
-                    </div>
+                <b>CHOOSE TRANSPORT</b>
+                <div className="columns">
+                    <TransportItem type="Bus" icon={busIcon} color="#FFCC01"/>
+                    <TransportItem type="Irish Rail" icon={railIcon} color="#00713D"/>
+                    <TransportItem type="Luas" icon={luasIcon} color="#542F92"/>
+                    <TransportItem type="Dublin Bikes" icon={bikeIcon} color="#114D57"/>
                 </div>
             </div>
         </div>

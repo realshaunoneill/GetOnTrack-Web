@@ -32,16 +32,15 @@ const Navbar = () => {
                             Timetables
                         </a>
                     </Link>
+                </div>
+                <div className="navbar-end">
                     <div className="navbar-item">
                         <Link href="/support">
-                            <a className="button supportButton is-outlined">
+                            <a className="button supportButton is-outlined is-success">
                                 Support
                             </a>
                         </Link>
                     </div>
-
-                </div>
-                <div className="navbar-end">
                     <div className="navbar-item">
                         <Login/>
                     </div>
