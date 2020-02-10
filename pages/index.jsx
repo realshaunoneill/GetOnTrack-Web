@@ -12,7 +12,7 @@ import bikeIcon from '../assets/img/bike.svg';
 const Index = () => (
     <DefaultLayout title="Home">
         <div className="columns">
-            <div className="column is-half columnInfo">
+            <div className="column columnInfo">
                 <h1 className="title is-1">
                         <span className="header-title">
                             Welcome to <b>GetOnTrack</b>
@@ -28,14 +28,14 @@ const Index = () => (
                     </span>
                 </div>
             </div>
-            <div className="column is-half is-hidden-mobile columnMap">
+            <div className="column is-three-fifths is-hidden-mobile columnMap">
                 <GoogleMap/>
             </div>
 
             <div className="transportFooter is-hidden-mobile">
                 <b>CHOOSE TRANSPORT</b>
-                <div className="columns">
-                    <TransportItem type="Bus" icon={busIcon} color="#FFCC01"/>
+                <div className="columns is-centered">
+                    <TransportItem type="Dublin Bus" icon={busIcon} color="#FFCC01"/>
                     <TransportItem type="Irish Rail" icon={railIcon} color="#00713D"/>
                     <TransportItem type="Luas" icon={luasIcon} color="#542F92"/>
                     <TransportItem type="Dublin Bikes" icon={bikeIcon} color="#114D57"/>
