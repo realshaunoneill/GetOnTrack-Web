@@ -4,7 +4,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faSearch} from "@fortawesome/free-solid-svg-icons";
 
 const TransportItem = ({type, icon, color}) => (
-    <div className="column transportItem has-text-centered" style={{backgroundColor: color}}>
+    <a className="column transportItem has-text-centered" style={{backgroundColor: color}}>
         <div className="columns is-vcentered is-gapless">
             <div className="column is-3">
                 <img src={icon}/>
@@ -17,7 +17,7 @@ const TransportItem = ({type, icon, color}) => (
                 <FontAwesomeIcon icon={faSearch}/>
             </div>
         </div>
-    </div>
+    </a>
 );
 
 export default TransportItem;

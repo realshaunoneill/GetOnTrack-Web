@@ -2,7 +2,6 @@ import React from 'react'
 import DefaultLayout from "../layouts/default";
 import TransportItem from "../components/TransportItem";
 import GoogleMap from '../components/map/GoogleMap';
-
 // Import Icons here for now, will move to component later
 import busIcon from '../assets/img/bus.svg';
 import railIcon from '../assets/img/rail.svg';
@@ -18,7 +17,7 @@ const Index = () => (
                             Welcome to <b>GetOnTrack</b>
                         </span>
                 </h1>
-                <h2 className="header-subtitle">
+                <h2 className="is-5 subtitle">
                     One stop solution to move and commute around Dublin
                 </h2>
                 <div className="fancySearchBox control has-icons-right">

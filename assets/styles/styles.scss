@@ -1,5 +1,6 @@
 // We can import bulma into the project using Sass.
 @import "../../node_modules/bulma/bulma.sass";
+//@import url('https://fonts.googleapis.com/css?family=Frank+Ruhl+Libre&display=swap');
 
 @import "variables";
 
@@ -14,8 +15,13 @@ html, body, #__next, .columns {
   margin: 0;
 }
 
+.header-title {
+  font-weight: bold;
+}
+
 .columnInfo {
-  margin-left: 2rem;
+  padding-right: 2.5rem;
+  padding-left: 2rem;
   margin-top: 10rem;
 }
 
