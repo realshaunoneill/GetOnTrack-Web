@@ -29,9 +29,9 @@
     margin-left: 1rem;
     margin-right: 1rem;
     border-radius: 10px;
-    color: black;
+    color: white;
 
-    &:hover {
+    &.light {
       color: black;
     }
 
@@ -40,6 +40,7 @@
     }
 
     svg {
+      color: white;
       font-size: 1.5rem;
     }
   }

@@ -3,8 +3,8 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 
 import {faChevronCircleRight} from "@fortawesome/free-solid-svg-icons";
 
-const TransportItem = ({type, icon, color}) => (
-    <a className="column transportItem has-text-centered" style={{backgroundColor: color}}>
+const TransportItem = ({type, icon, color, isLight = false}) => (
+    <a className={`column transportItem has-text-centered ${isLight ? 'light' : ''}`} style={{backgroundColor: color}}>
         <div className="columns is-vcentered is-gapless">
             <div className="column is-3">
                 <img src={icon} alt={type}/>
