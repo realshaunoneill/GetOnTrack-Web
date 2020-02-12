@@ -8,7 +8,7 @@
 @import "components/navbar";
 
 @import "components/fancySearchBox";
-@import "components/transportItem";
+@import "components/transportFooter";
 
 html, body, #__next, .columns {
   height: 100%;
@@ -16,7 +16,13 @@ html, body, #__next, .columns {
 }
 
 .header-title {
+  font-size: 4rem;
   font-weight: bold;
+  color: black;
+
+  b {
+    color: #0c7908;
+  }
 }
 
 .columnInfo {
@@ -29,21 +35,8 @@ html, body, #__next, .columns {
   padding: 0;
 }
 
-.transportFooter {
-  position: fixed;
-  width: 100%;
-  bottom: 2rem;
-  padding-left: 2rem;
-  padding-right: 2rem;
-
-  b {
-    font-size: 1.5rem;
-  }
-
-  .transportFooterContainer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    color: green;
-  }
+// Probably shouldn't do this but ah well
+.gm-control-active, .gm-bundled-control-on-bottom, .gm-style-cc {
+  display: none;
 }
+
