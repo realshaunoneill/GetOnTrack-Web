@@ -27,6 +27,9 @@ const Index = () => (
             </div>
             <TransportFooter/>
         </div>
+        <div className="is-hidden-desktop">
+
+        </div>
     </DefaultLayout>
 );
 
