@@ -17,9 +17,9 @@ const AnyReactComponent = ({ text }) => (
     </div>
 );
 
-const GoogleMap = () => (
+const GoogleMap = ({center = {"lat": 53.35, "lng": -6.40}}) => (
     <GoogleMapReact
-        defaultCenter={{"lat": 53.35, "lng": -6.40}}
+        defaultCenter={center}
         defaultZoom={11}
     >
 
