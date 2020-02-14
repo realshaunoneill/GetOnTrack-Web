@@ -14,7 +14,7 @@ const fakeResults = [
 const DublinBus = () => (
     <DefaultLayout title="Search Results">
         <RealTime type="Dublin Bus" colour={"#FFCC01"} icon={busIcon} stopID={123} stopLocation="Blanchardstown"
-                  results={fakeResults}/>
+                  results={fakeResults} stopCoords={{"lat": 52.35, "lng": -6.40}}/>
     </DefaultLayout>
 );
 

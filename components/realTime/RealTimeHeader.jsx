@@ -1,5 +1,4 @@
 import React from 'react';
-import SearchBox from "../search/SearchBox";
 
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faChevronCircleLeft} from "@fortawesome/free-solid-svg-icons";
@@ -21,7 +20,7 @@ const RealTimeHeader = ({type, icon, colour, stopID, stopLocation}) => (
                 <span><b>{stopID}</b> / {<i>{stopLocation}</i>}</span>
             </div>
         </div>
-        <SearchBox/>
+        {/*<SearchBox/>*/}
     </div>
 );
 
