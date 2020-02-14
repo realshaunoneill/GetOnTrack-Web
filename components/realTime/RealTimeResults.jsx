@@ -1,13 +1,18 @@
 import React from 'react';
 import RealTimeResultItem from "./RealTimeResultItem";
 
+const displayResults = (type, results) => {
+    if (results.length === 0 || !results) return <span>Loading</span>
+    return results.map(({number, name, departure, arrival, late}) => (
+        <RealTimeResultItem type={type} number={number} name={name} departure={departure} arrival={arrival}
+                            late={late}/>
+    ))
+};
+
 const RealTimeResults = ({type, results}) => (
     <div className="realTimeResults">
         <h1><b>{type}</b> Results:</h1>
-        {results.map(({number, name, departure, arrival, late}) => (
-            <RealTimeResultItem type={type} number={number} name={name} departure={departure} arrival={arrival}
-                                late={late}/>
-        ))};
+        {displayResults(type, results)};
     </div>
 );
 
