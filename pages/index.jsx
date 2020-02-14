@@ -2,6 +2,7 @@ import React from 'react'
 import DefaultLayout from "../layouts/default";
 import GoogleMap from '../components/map/GoogleMap';
 import TransportFooter from "../components/transportFooter/TransportFooter";
+import SearchBox from "../components/search/SearchBox";
 
 const Index = () => (
     <DefaultLayout title="Home">
@@ -15,12 +16,7 @@ const Index = () => (
                 <h2 className="is-4 subtitle">
                     Your one stop solution to move and commute around Dublin
                 </h2>
-                <div className="fancySearchBox control has-icons-right">
-                    <input className="input is-large" type="text" placeholder="Where do you want to go?"/>
-                    <span className="magnifSearch icon is-medium is-right">
-                        <i data-feather="search"/>
-                    </span>
-                </div>
+                <SearchBox/>
             </div>
             <div className="column is-three-fifths is-hidden-mobile columnMap">
                 <GoogleMap/>

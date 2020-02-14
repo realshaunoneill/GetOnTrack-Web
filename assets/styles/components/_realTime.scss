@@ -1,0 +1,38 @@
+.realTime {
+  .realTimeHeader {
+    margin-top: 7rem;
+    border-radius: 5px;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    padding-left: 1rem;
+    padding-bottom: 2rem;
+
+    h1 {
+      font-size: 2rem;
+      color: white;
+    }
+
+    svg {
+      color: white;
+      font-size: 2rem;
+    }
+
+    .control {
+      margin-right: 20rem;
+    }
+  }
+
+  .realTimeResults {
+    margin-left: 1rem;
+
+    h1 {
+      font-size: 1.25rem;
+      text-transform: uppercase;
+    }
+
+    .realTimeResultItem {
+      background-color: whitesmoke;
+      border-radius: 5px;
+    }
+  }
+}
