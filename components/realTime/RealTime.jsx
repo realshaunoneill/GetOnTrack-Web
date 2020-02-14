@@ -3,10 +3,10 @@ import RealTimeHeader from "./RealTimeHeader";
 import RealTimeResults from "./RealTimeResults";
 import GoogleMap from "../map/GoogleMap";
 
-const RealTime = ({type, colour, icon, results}) => (
+const RealTime = ({type, colour, icon, stopID, stopLocation, stopCoords, results}) => (
     <div className="columns realTime">
         <div className="column">
-            <RealTimeHeader type={type} icon={icon} colour={colour}/>
+            <RealTimeHeader type={type} icon={icon} colour={colour} stopID={stopID} stopLocation={stopLocation}/>
             <br/><br/>
             <RealTimeResults type={type} results={results}/>
         </div>
