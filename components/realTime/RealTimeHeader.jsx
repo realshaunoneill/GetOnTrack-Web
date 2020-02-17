@@ -1,8 +1,9 @@
 import React from 'react';
+import Link from "next/link";
 
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faChevronCircleLeft} from "@fortawesome/free-solid-svg-icons";
-import Link from "next/link";
+import SearchBox from "../search/SearchBox";
 
 const RealTimeHeader = ({type, icon, colour, stopID, stopLocation}) => (
     <div className="realTimeHeader" style={{backgroundColor: colour}}>
@@ -20,7 +21,7 @@ const RealTimeHeader = ({type, icon, colour, stopID, stopLocation}) => (
                 <span><b>{stopID}</b> / {<i>{stopLocation}</i>}</span>
             </div>
         </div>
-        {/*<SearchBox/>*/}
+        {!stopLocation ? <SearchBox/> : null}
     </div>
 );
 

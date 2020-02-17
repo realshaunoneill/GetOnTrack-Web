@@ -13,7 +13,7 @@ const fakeResults = [
 
 const DublinBus = () => (
     <DefaultLayout title="Search Results">
-        <RealTime type="Irish Rail" colour={"#00713D"} icon={irishRail} stopID="Heuston" stopLocation="Dublin"
+        <RealTime type="Irish Rail" colour={"#00713D"} icon={irishRail} stopID="Heuston"
                   results={fakeResults}/>
     </DefaultLayout>
 );

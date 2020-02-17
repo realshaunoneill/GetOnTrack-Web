@@ -8,11 +8,11 @@ const displayResults = (type, results) => {
         className="loading has-text-centered"
         type="Puff"
         color="#000000"
-        height={"15rem"}
-        width={"15rem"}
+        height={200}
+        width={200}
     />;
-    return results.map(({number, name, departure, arrival, late}) => (
-        <RealTimeResultItem type={type} number={number} name={name} departure={departure} arrival={arrival}
+    return results.map(({number, name, departure, arrival, late}, x) => (
+        <RealTimeResultItem key={x} type={type} number={number} name={name} departure={departure} arrival={arrival}
                             late={late}/>
     ))
 };
