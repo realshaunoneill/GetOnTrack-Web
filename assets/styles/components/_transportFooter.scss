@@ -1,0 +1,47 @@
+.transportFooter {
+  position: fixed;
+  width: 100%;
+  bottom: 2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+
+  b {
+    font-size: 1.5rem;
+  }
+
+  .footerTitle {
+    b {
+      color: black;
+    }
+
+    margin-left: 1rem;
+    font-size: 1.5rem;
+  }
+
+  .transportFooterContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: green;
+  }
+
+  .transportItem {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    border-radius: 10px;
+    color: white;
+
+    &.light {
+      color: black;
+    }
+
+    b {
+      font-size: 1.5rem;
+    }
+
+    svg {
+      color: white;
+      font-size: 1.5rem;
+    }
+  }
+}

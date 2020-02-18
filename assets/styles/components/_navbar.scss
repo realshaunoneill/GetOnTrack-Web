@@ -1,45 +1,26 @@
 .navbar {
-  .navbar-item {
-    color: white;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  margin-top: 2rem;
+
+  box-shadow: 3px 3px 5px 6px #ccc;
+  border-radius: 5px;
+
+  .navbar-title:hover {
+    background-color: transparent !important;
+  }
+
+  .navbar-item:hover:not(.navbar-title) {
+    background-color: transparent !important;
+    border-bottom: 0 !important;
   }
 
   .navbar-brand {
     letter-spacing: 2px;
-    font-size: 1.5rem;
-    font-weight: bold;
+    font-size: 1.3rem;
 
     .navbar-burger {
       color: whitesmoke;
     }
-  }
-
-  .navbar-end {
-    .loginButton {
-      color: $colorAccent;
-      border-color: $colorAccent;
-      background-color: transparent;
-      font-weight: bold;
-
-      &:hover {
-        background-color: $colorAccent;
-        color: white;
-      }
-    }
-
-    .supportButton {
-      color: $colorSecondry;
-      border-color: $colorSecondry;
-      background-color: transparent;
-      font-weight: bold;
-
-      &:hover {
-        background-color: $colorSecondry;
-        color: white;
-      }
-    }
-  }
-
-  .nuxt-link-exact-active:not(.navbar-title) {
-
   }
 }

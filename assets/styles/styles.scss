@@ -1,19 +1,43 @@
 // We can import bulma into the project using Sass.
 @import "../../node_modules/bulma/bulma.sass";
+//@import url('https://fonts.googleapis.com/css?family=Frank+Ruhl+Libre&display=swap');
 
 @import "variables";
 
 @import "components/header";
 @import "components/navbar";
-@import "components/footer";
-@import "components/serviceBox";
-@import "components/searchBox";
-@import "components/timetables";
 
-.styledBackground {
-  background: linear-gradient(0deg, $colorPrimaryLight, $colorPrimary), linear-gradient(90deg, $colorAccent, $colorSecondry);
+@import "components/fancySearchBox";
+@import "components/transportFooter";
+@import "components/realTime";
+
+html, body, #__next, .columns {
+  height: 100%;
+  margin: 0;
 }
 
-.styledBackgroundReverse {
-  background: linear-gradient(0deg, $colorPrimary, $colorPrimaryLight), linear-gradient(90deg, $colorAccent, $colorSecondry);
+.header-title {
+  font-size: 4rem;
+  font-weight: bold;
+  color: black;
+
+  b {
+    color: #0c7908;
+  }
 }
+
+.columnInfo {
+  padding-right: 2.5rem;
+  padding-left: 2rem;
+  margin-top: 10rem;
+}
+
+.columnMap {
+  padding: 0;
+}
+
+// Probably shouldn't do this but ah well
+.gm-control-active, .gm-bundled-control-on-bottom, .gm-style-cc {
+  display: none;
+}
+
