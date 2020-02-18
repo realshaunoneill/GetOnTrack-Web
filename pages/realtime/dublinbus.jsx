@@ -18,14 +18,13 @@ const DublinBus = ({query}) => {
     const [apiResults, setApiResults] = useState([]);
 
     const fetchData = async (stopID) => {
-
+        const data = await fetch(`https://api.getontrack.ie/dublinbus/live?stopid=${stopID}`);
+        console.log(data);
     };
 
     useEffect(() => {
         try {
-            setTimeout(() => {
-                setApiResults(fakeResults);
-            }, 5000)
+            fetchData(query.stop)
         } catch (err) {
 
         }
