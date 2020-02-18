@@ -8,9 +8,9 @@ const RealTime = ({type, colour, icon, stopID, stopLocation, stopCoords, results
         <div className="column">
             <RealTimeHeader type={type} icon={icon} colour={colour} stopID={stopID} stopLocation={stopLocation}/>
             <br/>
-            <RealTimeResults type={type} results={results}/>
+            <RealTimeResults type={type} colour={colour} results={results}/>
         </div>
-        <div className="column is-one-third">
+        <div className="column map is-one-third">
             <GoogleMap center={stopCoords}/>
         </div>
     </div>

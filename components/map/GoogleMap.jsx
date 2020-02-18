@@ -19,6 +19,7 @@ const AnyReactComponent = ({ text }) => (
 
 const GoogleMap = ({center = {"lat": 53.35, "lng": -6.40}}) => (
     <GoogleMapReact
+        bootstrapURLKeys={{key: "AIzaSyBk7cQco6GEd2AfR3Ybq5Ppd-Fs9zbBbG8"}}
         defaultCenter={center}
         defaultZoom={11}
     >

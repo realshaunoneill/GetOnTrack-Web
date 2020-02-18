@@ -18,10 +18,10 @@ const RealTimeHeader = ({type, icon, colour, stopID, stopLocation}) => (
             </div>
             <div className="column">
                 <h1><b>{type}</b></h1>
-                <span><b>{stopID}</b> / {<i>{stopLocation}</i>}</span>
+                {stopID && stopLocation ? <span><b>{stopID}</b> / {<i>{stopLocation}</i>}</span> : <span>Search for a stop location...</span>}
             </div>
         </div>
-        {!stopLocation ? <SearchBox/> : null}
+        {!stopID || !stopLocation ? <SearchBox/> : null}
     </div>
 );
 

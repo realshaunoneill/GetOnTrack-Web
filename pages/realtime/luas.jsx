@@ -2,8 +2,8 @@ import React, {useEffect, useState} from 'react'
 import DefaultLayout from "../../layouts/default";
 import RealTime from "../../components/realTime/RealTime";
 
-import busIcon from "../../assets/img/bus.svg";
-import {DUBLIN_BUS_YELLOW} from '../../assets/Colours';
+import luasIcon from "../../assets/img/luas.svg";
+import {LUAS_PURPLE} from '../../assets/Colours';
 
 const fakeResults = [
     {number: 120, name: "Cork", departure: "18:00", arrival: "19:00", late: "6 mins"},
@@ -12,14 +12,8 @@ const fakeResults = [
     {number: 126, name: "Cork", departure: "18:00", arrival: "19:00", late: "6 mins"},
 ];
 
-const DublinBus = ({query}) => {
-    const [stopID, setStopID] = useState(query.stop);
-    const [stopLocation, setStopLocation] = useState("...");
+const Luas = ({query}) => {
     const [apiResults, setApiResults] = useState([]);
-
-    const fetchData = async (stopID) => {
-
-    };
 
     useEffect(() => {
         try {
@@ -33,15 +27,14 @@ const DublinBus = ({query}) => {
 
     return (
         <DefaultLayout title="Search Results">
-            <RealTime type="Dublin Bus" colour={DUBLIN_BUS_YELLOW} icon={busIcon} stopID={stopID} stopLocation={stopLocation}
+            <RealTime type="Luas" colour={LUAS_PURPLE} icon={luasIcon} stopID={123} stopLocation="Blanchardstown"
                       results={apiResults} stopCoords={{"lat": 52.35, "lng": -6.40}}/>
         </DefaultLayout>
     );
 };
 
-DublinBus.getInitialProps = ({query}) => {
+Luas.getInitialProps = ({query}) => {
     return {query}
 };
 
-
-export default DublinBus;
+export default Luas;

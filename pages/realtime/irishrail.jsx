@@ -11,11 +11,15 @@ const fakeResults = [
     {number: 120, name: "Cork", departure: "18:00", arrival: "19:00", late: "6 mins"},
 ];
 
-const DublinBus = () => (
+const IrishRail = ({query}) => (
     <DefaultLayout title="Search Results">
         <RealTime type="Irish Rail" colour={"#00713D"} icon={irishRail} stopID="Heuston"
                   results={fakeResults}/>
     </DefaultLayout>
 );
 
-export default DublinBus;
+IrishRail.getInitialProps = ({query}) => {
+    return {query}
+};
+
+export default IrishRail;
