@@ -1,18 +1,13 @@
 import React from 'react';
-import Loader from 'react-loader-spinner';
 
 import RealTimeResultItem from "./RealTimeResultItem";
+import Loading from "../loading/Loading";
 
 const displayResults = (type, colour, results) => {
-    if (results.length === 0 || !Array.isArray(results)) return <Loader
-        className="loading has-text-centered"
-        type="Puff"
-        color={colour}
-        height={200}
-        width={200}
-    />;
-    return results.map(({number, name, departure, arrival, late}, x) => (
-        <RealTimeResultItem key={x} type={type} number={number} name={name} departure={departure} arrival={arrival}
+    if (results.length === 0 || !Array.isArray(results)) return <Loading colour={colour}/>;
+
+    return results.map(({route, destination, departureduetime, duetime, late}, x) => (
+        <RealTimeResultItem key={x} type={type} number={route} name={destination} departure={departureduetime} arrival={duetime}
                             late={late}/>
     ))
 };
