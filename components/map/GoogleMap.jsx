@@ -18,17 +18,17 @@ const AnyReactComponent = ({ text }) => (
     </div>
 );
 
-const GoogleMap = ({center = {"lat": 53.35, "lng": -6.40}}) => {
+const GoogleMap = ({center}) => {
     const {latitude, longitude, timestamp, accuracy, error} = usePosition();
     return (
         <GoogleMapReact
             bootstrapURLKeys={{key: "AIzaSyBk7cQco6GEd2AfR3Ybq5Ppd-Fs9zbBbG8"}}
-            defaultCenter={center}
+            defaultCenter={{"lat": 53.35, "lng": -6.40}}
             defaultZoom={11}
         >
             <AnyReactComponent
-                lat={latitude}
-                lng={longitude}
+                lat={center ? center.lat : latitude}
+                lng={center ? center.lng : longitude}
                 text="Current Location"
             />
         </GoogleMapReact>

@@ -7,18 +7,24 @@ import {DUBLIN_BUS_YELLOW} from '../../assets/Colours';
 
 const DublinBus = ({query}) => {
     const [stopID, setStopID] = useState(query.stop);
-    const [stopLocation, setStopLocation] = useState("...");
+    const [stopLocationName, setStopLocationName] = useState("...");
+    const [stopCoords, setStopCoords] = useState({});
     const [apiResults, setApiResults] = useState([]);
 
     const fetchData = async (stopID) => {
         if (!stopID) return null;
 
-        const data = await (await fetch(`https://api.getontrack.ie/dublinbus/live?stopid=${stopID}`)).json();
-        if (data.errorcode === "0") {
-            console.log(data)
-            setApiResults(data.results)
-        } else if (data.errorcode === "1") {
+        const stopData = await (await fetch(`https://api.getontrack.ie/dublinbus/stops?stopid=${stopID}`)).json();
+        if (stopData.errorcode === "0" && stopData.results.length > 0) {
+            setStopLocationName(stopData.results[0].shortname);
+            setStopCoords({lat: stopData.results[0].latitude, lng: stopData.results[0].longitude});
+        }
 
+        const realtimeData = await (await fetch(`https://api.getontrack.ie/dublinbus/live?stopid=${stopID}`)).json();
+        if (realtimeData.errorcode === "0") {
+            setApiResults(realtimeData.results)
+        } else if (realtimeData.errorcode === "1") {
+            // No Results Found
         }
     };
 
@@ -26,13 +32,13 @@ const DublinBus = ({query}) => {
         fetchData(query.stop).catch(err => {
             // Show Error Message
         });
-    }, [setStopID, setStopLocation, setApiResults]);
+    }, [setStopID, setStopLocationName, setStopCoords, setApiResults]);
 
     return (
         <DefaultLayout title="Search Results">
             <RealTime type="Dublin Bus" colour={DUBLIN_BUS_YELLOW} icon={busIcon} stopID={stopID}
-                      stopLocation={stopLocation}
-                      results={apiResults} stopCoords={{"lat": 52.35, "lng": -6.40}}/>
+                      stopLocation={stopLocationName}
+                      results={apiResults} stopCoords={stopCoords}/>
         </DefaultLayout>
     );
 };
