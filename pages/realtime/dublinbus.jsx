@@ -25,6 +25,7 @@ const DublinBus = ({query}) => {
             setApiResults(realtimeData.results)
         } else if (realtimeData.errorcode === "1") {
             // No Results Found
+            setApiResults(true);
         }
     };
 
