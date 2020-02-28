@@ -1,10 +1,20 @@
-import React, {useState} from 'react'
+import React, {useContext} from 'react'
+import AuthContext from "../../components/AuthContext";
+import DefaultLayout from "../../layouts/default";
 const jwt = require('jsonwebtoken');
 
 const AuthCallback = ({query}) => {
     const jwtToken = query.token;
     if (!jwtToken) return  ErrorNotification("No token supplied");
 
+    return (
+        <DefaultLayout title="Auth Callback">
+            <AuthScreen jwtToken={jwtToken}/>
+        </DefaultLayout>
+    )
+};
+
+const AuthScreen = ({jwtToken}) => {
     // Check if the JWT is valid before we store it in local storage
     let decodedJwt;
     try {
@@ -13,10 +23,12 @@ const AuthCallback = ({query}) => {
         return ErrorNotification("Unable to decode JWT")
     }
 
-    console.log(decodedJwt)
+    const authUser = useContext(AuthContext);
+    authUser.setAuthUser(jwtToken);
+
     return (
-        <div>{decodedJwt.displayName}</div>
-    )
+        <div>{jwtToken}</div>
+    );
 };
 
 AuthCallback.getInitialProps = ({query}) => {
