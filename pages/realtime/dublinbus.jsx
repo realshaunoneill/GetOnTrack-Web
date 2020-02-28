@@ -15,12 +15,14 @@ const DublinBus = ({query}) => {
         if (!stopID) return null;
 
         const stopData = await (await fetch(`https://api.getontrack.ie/dublinbus/stops?stopid=${stopID}`)).json();
+        console.debug({stopData});
         if (stopData.errorcode === "0" && stopData.results.length > 0) {
             setStopLocationName(stopData.results[0].shortname);
             setStopCoords({lat: stopData.results[0].latitude, lng: stopData.results[0].longitude});
         }
 
         const realtimeData = await (await fetch(`https://api.getontrack.ie/dublinbus/live?stopid=${stopID}`)).json();
+        console.debug({realtimeData})
         if (realtimeData.errorcode === "0") {
             setApiResults(realtimeData.results)
         } else if (realtimeData.errorcode === "1") {
