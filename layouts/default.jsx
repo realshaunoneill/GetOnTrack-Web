@@ -5,21 +5,17 @@ import Meta from "../components/Meta";
 
 import styles from '../assets/styles/styles.scss';
 import Navbar from "../components/navbar/Navbar";
-import AuthContext from "../components/AuthContext";
+import AuthProvider from "../components/AuthContext";
 
 const DefaultLayout = ({title, children}) => {
-    const [authUser, setAuthUser] = useState(null);
 
     return (
         <Fragment>
             <Meta title={title}/>
-            <AuthContext.Provider value={{
-                authUser: authUser,
-                setAuthUser: setAuthUser
-            }}>
+            <AuthProvider>
                 <Navbar/>
                 {children}
-            </AuthContext.Provider>
+            </AuthProvider>
         </Fragment>
     );
 };

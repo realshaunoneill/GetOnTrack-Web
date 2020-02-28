@@ -1,5 +1,5 @@
 import React, {useContext} from 'react'
-import AuthContext from "../../components/AuthContext";
+import {AuthContext} from "../../components/AuthContext";
 import DefaultLayout from "../../layouts/default";
 const jwt = require('jsonwebtoken');
 
@@ -19,12 +19,14 @@ const AuthScreen = ({jwtToken}) => {
     let decodedJwt;
     try {
         decodedJwt = jwt.decode(jwtToken);
+        //console.log(decodedJwt);
     } catch (err) {
         return ErrorNotification("Unable to decode JWT")
     }
 
     const authUser = useContext(AuthContext);
-    authUser.setAuthUser(jwtToken);
+    authUser.setAuthUserID(decodedJwt.id);
+    authUser.setAuthUserName(decodedJwt.displayName);
 
     return (
         <div>{jwtToken}</div>

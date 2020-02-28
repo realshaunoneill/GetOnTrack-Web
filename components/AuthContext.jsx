@@ -1,5 +1,26 @@
-import React, {createContext} from 'react';
+import React, {createContext, useState, useCallback} from 'react';
 
-const AuthContext = createContext(null);
+export const AuthContext = createContext(null);
 
-export default AuthContext;
+const AuthProvider = ({children}) => {
+    const [authUserID, setAuthUserID] = useState(null);
+    const [authUserName, setAuthUserName] = useState(null);
+
+    const testSave = (data) => {
+        console.log(data)
+        setAuthUser(data);
+    }
+
+    return (
+        <AuthContext.Provider value={{
+            authUserID,
+            setAuthUserID,
+            authUserName,
+            setAuthUserName,
+        }}>
+            {children}
+        </AuthContext.Provider>
+    )
+};
+
+export default AuthProvider;
