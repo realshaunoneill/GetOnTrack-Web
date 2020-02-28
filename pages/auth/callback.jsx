@@ -25,8 +25,8 @@ const AuthScreen = ({jwtToken}) => {
     }
 
     const authUser = useContext(AuthContext);
-    authUser.setAuthUserID(decodedJwt.id);
-    authUser.setAuthUserName(decodedJwt.displayName);
+    authUser.setUserID(decodedJwt.id);
+    authUser.setUserName(decodedJwt.displayName);
 
     return (
         <div>{jwtToken}</div>

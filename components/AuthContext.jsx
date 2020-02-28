@@ -3,8 +3,8 @@ import React, {createContext, useState, useCallback} from 'react';
 export const AuthContext = createContext(null);
 
 const AuthProvider = ({children}) => {
-    const [authUserID, setAuthUserID] = useState(null);
-    const [authUserName, setAuthUserName] = useState(null);
+    const [userID, setUserID] = useState(null);
+    const [userName, setUserName] = useState(null);
 
     const testSave = (data) => {
         console.log(data)
@@ -13,10 +13,10 @@ const AuthProvider = ({children}) => {
 
     return (
         <AuthContext.Provider value={{
-            authUserID,
-            setAuthUserID,
-            authUserName,
-            setAuthUserName,
+            userID,
+            setUserID,
+            userName,
+            setUserName,
         }}>
             {children}
         </AuthContext.Provider>
