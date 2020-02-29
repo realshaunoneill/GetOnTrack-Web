@@ -1,12 +1,13 @@
 import React from 'react';
 
 import RealTimeResultItem from "./RealTimeResultItem";
-import Loading from "../loading/Loading";
+import Loading from "../notifications/Loading";
+import Notification from "../notifications/Notification";
 
 const displayResults = (type, colour, results) => {
     if (results === true) {
         // Finished loading and there was no results
-        return <h1 className="has-text-centered title is-1">..No results found..</h1>
+        return <Notification message="No results found"/>
     }
     if (results.length === 0 || !Array.isArray(results)) return <Loading colour={colour}/>;
 
