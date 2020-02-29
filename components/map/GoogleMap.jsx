@@ -18,7 +18,7 @@ const AnyReactComponent = ({ text }) => (
     </div>
 );
 
-const GoogleMap = ({center}) => {
+const GoogleMap = ({center, colour}) => {
     const {latitude, longitude, timestamp, accuracy, error} = usePosition();
     return (
         <GoogleMapReact

@@ -12,7 +12,8 @@ const RealTime = ({type, colour, icon, stopID, stopLocation, stopCoords, results
             {stopID ? <RealTimeResults type={type} colour={colour} results={results}/> : <Notification message="No stop selected"/>}
 
         </div>
-        <div className="column map is-one-third">
+        <div className="column map is-one-third"
+             style={{border: `3px solid ${colour ? colour : "black"}`}}>
             <GoogleMap center={stopCoords}/>
         </div>
     </div>
