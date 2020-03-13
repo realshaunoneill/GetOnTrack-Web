@@ -27,6 +27,7 @@ const DublinBus = ({query}) => {
         }
 
         if (!stopID) return null;
+        setStopID(stopID);
         const stopData = await (await fetch(`${API_URL}/dublinbus/stops?stopid=${stopID}`)).json();
         console.debug({stopData});
         if (stopData.errorcode === "0" && stopData.results.length > 0) {
@@ -54,7 +55,7 @@ const DublinBus = ({query}) => {
         <DefaultLayout title="Search Results">
             <RealTime type="Dublin Bus" colour={DUBLIN_BUS_YELLOW} icon={busIcon} stopID={stopID}
                       stopLocation={stopLocationName}
-                      results={apiResults} stopCoords={stopCoords}/>
+                      results={apiResults} stopCoords={stopCoords} changeValue={(stop) => fetchData(stop)}/>
         </DefaultLayout>
     );
 };

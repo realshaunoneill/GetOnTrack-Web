@@ -1,8 +1,10 @@
 import React, {useState} from 'react';
 import {AutoComplete} from '@bit/primefaces.primereact.autocomplete';
 import PrimereactStyle from '@bit/primefaces.primereact.internal.stylelinks';
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faChevronCircleRight} from "@fortawesome/free-solid-svg-icons";
 
-const SearchBox = ({availableOptions= ['Audi', 'BMW', 'Fiat', 'Ford', 'Honda', 'Jaguar', 'Mercedes', 'Renault', 'Volvo']}) => {
+const SearchBox = ({availableOptions = ['Audi', 'BMW', 'Fiat', 'Ford', 'Honda', 'Jaguar', 'Mercedes', 'Renault', 'Volvo'], changeValue}) => {
     const [filteredOptions, setFilteredOptions] = useState([]);
     const [value, setValue] = useState("");
 
@@ -20,7 +22,7 @@ const SearchBox = ({availableOptions= ['Audi', 'BMW', 'Fiat', 'Ford', 'Honda', '
                 alt={option}
                 src={`https://raw.githubusercontent.com/primefaces/primereact/master/public/showcase/resources/demo/images/car/${option}.png`}
             />
-            <div className="itemText" >
+            <div className="itemText">
                 {option}
             </div>
         </div>
@@ -39,6 +41,9 @@ const SearchBox = ({availableOptions= ['Audi', 'BMW', 'Fiat', 'Ford', 'Honda', '
                 itemTemplate={getItemTemplate}
                 onChange={e => setValue(e.value)}
             />
+            <div className="searchButton button is-info" onClick={() => changeValue(value)}>
+                <FontAwesomeIcon icon={faChevronCircleRight} title="Search"/>
+            </div>
         </div>
     );
 };
