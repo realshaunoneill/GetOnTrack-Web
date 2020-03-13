@@ -10,6 +10,8 @@
     "lint:fix": "xo --fix"
   },
   "dependencies": {
+    "@bit/primefaces.primereact.autocomplete": "^3.1.8",
+    "@bit/primefaces.primereact.internal.stylelinks": "^3.1.8",
     "@fortawesome/fontawesome": "^1.1.8",
     "@fortawesome/fontawesome-svg-core": "^1.2.25",
     "@fortawesome/free-brands-svg-icons": "^5.11.2",
