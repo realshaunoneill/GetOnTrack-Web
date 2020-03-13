@@ -2,4 +2,16 @@
   .p-autocomplete-input {
     font-size: 1.5rem !important;
   }
+
+  .itemImage {
+    width: 32px;
+    display: inline-block;
+    margin: 5px 0 2px 5px;
+  }
+
+  .itemText {
+    font-size: 18px;
+    float: right;
+    margin: 10px 10px 0 0;
+  }
 }
