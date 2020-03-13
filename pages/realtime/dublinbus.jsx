@@ -8,14 +8,25 @@ import {DUBLIN_BUS_YELLOW} from '../../assets/Colours';
 const API_URL = (process.env.NODE_ENV === 'development' ? 'http://localhost:8080' : 'https://api.getontrack.ie');
 
 const DublinBus = ({query}) => {
+    const [allStops, setAllStops] = useState([]);
     const [stopID, setStopID] = useState(query.stop);
     const [stopLocationName, setStopLocationName] = useState("...");
     const [stopCoords, setStopCoords] = useState({});
     const [apiResults, setApiResults] = useState([]);
 
     const fetchData = async (stopID) => {
-        if (!stopID) return null;
+        // TODO Should save this to local storage
+        if (allStops.length === 0) {
+            const allStops = await (await fetch(`${API_URL}/graphql`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({query: '{ busStop { stopid, shortname } }'})
+            })).json();
+            setAllStops(allStops);
+            console.debug(allStops);
+        }
 
+        if (!stopID) return null;
         const stopData = await (await fetch(`${API_URL}/dublinbus/stops?stopid=${stopID}`)).json();
         console.debug({stopData});
         if (stopData.errorcode === "0" && stopData.results.length > 0) {
