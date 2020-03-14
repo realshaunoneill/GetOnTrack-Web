@@ -5,7 +5,7 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faChevronCircleLeft} from "@fortawesome/free-solid-svg-icons";
 import SearchBox from "../search/SearchBox";
 
-const RealTimeHeader = ({type, icon, colour, stopID, stopLocation, changeValue}) => (
+const RealTimeHeader = ({type, icon, colour, stopID, stopLocation, availableOptions, changeValue}) => (
     <div className="realTimeHeader" style={{backgroundColor: colour}}>
         <div className="columns is-multiline is-vcentered">
             <div className="column is-narrow">
@@ -21,7 +21,7 @@ const RealTimeHeader = ({type, icon, colour, stopID, stopLocation, changeValue})
                 {stopID && stopLocation ? <span><b>{stopID}</b> / {<i>{stopLocation}</i>}</span> : <span>Search for a stop location...</span>}
             </div>
         </div>
-        <SearchBox changeValue={changeValue}/>
+        <SearchBox availableOptions={availableOptions} changeValue={changeValue}/>
     </div>
 );
 

@@ -8,7 +8,7 @@ import {DUBLIN_BUS_YELLOW} from '../../assets/Colours';
 const API_URL = (process.env.NODE_ENV === 'development' ? 'http://localhost:8080' : 'https://api.getontrack.ie');
 
 const DublinBus = ({query}) => {
-    const [allStops, setAllStops] = useState([]);
+    const [allRoutes, setAllStops] = useState([]);
     const [stopID, setStopID] = useState(query.stop);
     const [stopLocationName, setStopLocationName] = useState("...");
     const [stopCoords, setStopCoords] = useState({});
@@ -16,14 +16,14 @@ const DublinBus = ({query}) => {
 
     const fetchData = async (stopID) => {
         // TODO Should save this to local storage
-        if (allStops.length === 0) {
-            const allStops = await (await fetch(`${API_URL}/graphql`, {
+        if (allRoutes.length === 0) {
+            const allRoutes = await (await fetch(`${API_URL}/graphql`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({query: '{ busStop { stopid, shortname } }'})
+                body: JSON.stringify({query: '{ busRoute { route } }'})
             })).json();
-            setAllStops(allStops);
-            console.debug(allStops);
+            setAllStops(allRoutes.data.busRoute);
+            console.debug(allRoutes);
         }
 
         if (!stopID) return null;
@@ -55,7 +55,7 @@ const DublinBus = ({query}) => {
         <DefaultLayout title="Search Results">
             <RealTime type="Dublin Bus" colour={DUBLIN_BUS_YELLOW} icon={busIcon} stopID={stopID}
                       stopLocation={stopLocationName}
-                      results={apiResults} stopCoords={stopCoords} changeValue={(stop) => fetchData(stop)}/>
+                      results={apiResults} stopCoords={stopCoords} availableOptions={allRoutes.map(item => (item.route))} changeValue={(stop) => fetchData(stop)}/>
         </DefaultLayout>
     );
 };

@@ -4,7 +4,7 @@ import PrimereactStyle from '@bit/primefaces.primereact.internal.stylelinks';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faChevronCircleRight} from "@fortawesome/free-solid-svg-icons";
 
-const SearchBox = ({availableOptions = ['Audi', 'BMW', 'Fiat', 'Ford', 'Honda', 'Jaguar', 'Mercedes', 'Renault', 'Volvo'], changeValue}) => {
+const SearchBox = ({availableOptions = [], changeValue}) => {
     const [filteredOptions, setFilteredOptions] = useState([]);
     const [value, setValue] = useState("");
 
@@ -17,11 +17,6 @@ const SearchBox = ({availableOptions = ['Audi', 'BMW', 'Fiat', 'Ford', 'Honda', 
 
     const getItemTemplate = option => (
         <div>
-            <img
-                className="itemImage"
-                alt={option}
-                src={`https://raw.githubusercontent.com/primefaces/primereact/master/public/showcase/resources/demo/images/car/${option}.png`}
-            />
             <div className="itemText">
                 {option}
             </div>
