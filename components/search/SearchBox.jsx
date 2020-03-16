@@ -4,9 +4,9 @@ import PrimereactStyle from '@bit/primefaces.primereact.internal.stylelinks';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faChevronCircleRight} from "@fortawesome/free-solid-svg-icons";
 
-const SearchBox = ({availableOptions = [], changeValue}) => {
+const SearchBox = ({defaultValue, availableOptions = [], changeValue}) => {
     const [filteredOptions, setFilteredOptions] = useState([]);
-    const [value, setValue] = useState("");
+    const [value, setValue] = useState(defaultValue);
 
     const filterOptions = event => {
         setTimeout(() => {
@@ -31,12 +31,15 @@ const SearchBox = ({availableOptions = [], changeValue}) => {
                 suggestions={filteredOptions}
                 completeMethod={filterOptions}
                 size={40}
-                minLength={1}
+                maxLength={1}
                 placeholder='Where would you like to go?'
                 itemTemplate={getItemTemplate}
                 onChange={e => setValue(e.value)}
+                onKeyPress={e => {
+                    if (e.key === "Enter") changeValue(value);
+                }}
             />
-            <div className="searchButton button is-info" onClick={() => changeValue(value)}>
+            <div className="searchButton button" onClick={() => changeValue(value)}>
                 <FontAwesomeIcon icon={faChevronCircleRight} title="Search"/>
             </div>
         </div>

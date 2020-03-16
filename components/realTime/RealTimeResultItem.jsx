@@ -23,7 +23,7 @@ const RealTimeResultItem = ({type, number, name, departure, arrival, late}) => (
         <div className="level-item has-text-centered">
             <div>
                 <p className="heading">Arriving</p>
-                <p className="title">{`${arrival} + ${late} mins`}</p>
+                <p className="title">{(arrival ? `${arrival} (${late})` : null)}</p>
             </div>
         </div>
     </nav>

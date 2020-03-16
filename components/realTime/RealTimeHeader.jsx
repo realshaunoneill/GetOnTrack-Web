@@ -21,7 +21,7 @@ const RealTimeHeader = ({type, icon, colour, stopID, stopLocation, availableOpti
                 {stopID && stopLocation ? <span><b>{stopID}</b> / {<i>{stopLocation}</i>}</span> : <span>Search for a stop location...</span>}
             </div>
         </div>
-        <SearchBox availableOptions={availableOptions} changeValue={changeValue}/>
+        <SearchBox defaultValue={stopID} availableOptions={availableOptions} changeValue={changeValue}/>
     </div>
 );
 

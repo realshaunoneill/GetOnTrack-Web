@@ -35,11 +35,9 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-end">
                     <div className="navbar-item">
-                        <Link href="/support">
-                            <a className="button supportButton is-outlined is-success">
-                                Support
-                            </a>
-                        </Link>
+                        <a href="https://docs.getontrack.ie" className="button supportButton is-warning" target="_blank">
+                            API Documentation
+                        </a>
                     </div>
                     <div className="navbar-item">
                         <Login/>
