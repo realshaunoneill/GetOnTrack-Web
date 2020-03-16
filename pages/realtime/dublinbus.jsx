@@ -9,7 +9,7 @@ import {DUBLIN_BUS_YELLOW} from '../../assets/Colours';
 const API_URL = (process.env.NODE_ENV === 'development' ? 'http://localhost:8080' : 'https://api.getontrack.ie');
 
 const DublinBus = ({query}) => {
-    const [allRoutes, setAllStops] = useState([]);
+    const [allRoutes, setAllRoutes] = useState([]);
     const [stopID, setStopID] = useState(query.stop);
     const [stopLocationName, setStopLocationName] = useState("...");
     const [stopCoords, setStopCoords] = useState({});
@@ -32,8 +32,8 @@ const DublinBus = ({query}) => {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({query: '{ busRoute { route } }'})
             })).json();
-            setAllStops(allRoutes.data.busRoute);
-            console.debug(allRoutes);
+            setAllRoutes(allRoutes.data.busRoute);
+            console.debug({allRoutes});
         }
 
         if (!stopID) return null;
@@ -56,7 +56,7 @@ const DublinBus = ({query}) => {
         fetchData(query.stop).catch(err => {
             // Show Error Message
         });
-    }, [setAllStops, setStopID, setStopLocationName, setStopCoords, setApiResults]);
+    }, [setAllRoutes, setStopID, setStopLocationName, setStopCoords, setApiResults]);
 
     return (
         <DefaultLayout title="Search Results">
