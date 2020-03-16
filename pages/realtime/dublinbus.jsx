@@ -15,7 +15,16 @@ const DublinBus = ({query}) => {
     const [stopCoords, setStopCoords] = useState({});
     const [apiResults, setApiResults] = useState([]);
 
+    const clearState = () => {
+        setStopID(null);
+        setStopLocationName('');
+        setStopCoords({});
+        setApiResults([]);
+    };
+
     const fetchData = async (stopID) => {
+        clearState();
+
         // TODO Should save this to local storage
         if (allRoutes.length === 0) {
             const allRoutes = await (await fetch(`${API_URL}/graphql`, {
@@ -32,6 +41,9 @@ const DublinBus = ({query}) => {
 
         const stopData = await (await fetch(`${API_URL}/dublinbus/stops?stopid=${stopID}`)).json();
         console.debug({stopData});
+        // Ensure the stop exists
+        if (stopData.errorcode !== "0") return setApiResults(true);
+
         setStopLocationName(stopData.results[0].shortname);
         setStopCoords({lat: stopData.results[0].latitude, lng: stopData.results[0].longitude});
 

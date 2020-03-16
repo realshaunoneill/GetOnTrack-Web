@@ -4,7 +4,7 @@ const RealTimeResultItem = ({type, number, name, departure, arrival, late}) => (
     <nav className="level realTimeResultItem">
         <div className="level-item has-text-centered">
             <div>
-                <p className="heading">{type} NO</p>
+                <p className="heading">{type} ROUTE</p>
                 <p className="title">{number}</p>
             </div>
         </div>
