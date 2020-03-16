@@ -7,12 +7,13 @@
   border-radius: 5px;
 
   .navbar-title:hover {
-    background-color: transparent !important;
+    background-color: transparent;
+    color: inherit;
   }
 
   .navbar-item:hover:not(.navbar-title) {
-    background-color: transparent !important;
-    border-bottom: 0 !important;
+    background-color: transparent;
+    border-bottom: 0;
   }
 
   .navbar-brand {
