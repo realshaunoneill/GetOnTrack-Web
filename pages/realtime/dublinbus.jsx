@@ -23,33 +23,39 @@ const DublinBus = ({query}) => {
     };
 
     const fetchData = async (stopID) => {
-        clearState();
+        try {
+            clearState();
 
-        // TODO Should save this to local storage
-        if (allRoutes.length === 0) {
-            const allRoutes = await (await fetch(`${API_URL}/graphql`, {
+            // TODO Should save this to local storage
+            if (allRoutes.length === 0) {
+                const allRoutes = await (await fetch(`${API_URL}/graphql`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({query: '{ busRoute { route } }'})
+                })).json();
+                setAllRoutes(allRoutes.data.busRoute);
+                console.debug({allRoutes});
+            }
+
+            if (!stopID) return null;
+            setStopID(stopID);
+
+            // GraphQL Query
+            const apiResponse = (await (await fetch(`${API_URL}/graphql`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({query: '{ busRoute { route } }'})
-            })).json();
-            setAllRoutes(allRoutes.data.busRoute);
-            console.debug({allRoutes});
+                body: JSON.stringify({query: `{ busStop(stopid: "${stopID}") { shortname, latitude, longitude, live {route, duetime, destination, origin, late} } }`})
+            })).json()).data.busStop[0];
+            console.debug({apiResponse});
+            setStopLocationName(apiResponse.shortname);
+            setStopCoords({lat: apiResponse.latitude, lng: apiResponse.longitude});
+
+            if (!apiResponse.live || apiResponse.live.length === 0) return setApiResults(true);
+            setApiResults(apiResponse.live);  //TODO Make sure this returns correctly
+        } catch (err) {
+            console.error(`Unable to fetch API response for Dublin Bus: ${err.stack}`);
+            setApiResults(true);
         }
-
-        if (!stopID) return null;
-        setStopID(stopID);
-
-        const stopData = await (await fetch(`${API_URL}/dublinbus/stops?stopid=${stopID}`)).json();
-        console.debug({stopData});
-        // Ensure the stop exists
-        if (stopData.errorcode !== "0") return setApiResults(true);
-
-        setStopLocationName(stopData.results[0].shortname);
-        setStopCoords({lat: stopData.results[0].latitude, lng: stopData.results[0].longitude});
-
-        const realtimeData = await (await fetch(`${API_URL}/dublinbus/live?stopid=${stopID}`)).json();
-        console.debug({realtimeData});
-        setApiResults(realtimeData.results);
     };
 
     useEffect(() => {

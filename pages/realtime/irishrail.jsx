@@ -28,9 +28,16 @@ const IrishRail = ({query}) => {
         if (!stopID) return null;
         setStopID(stopID);
 
-        const realtimeData = await (await fetch(`${API_URL}/irishrail/live?stationcode=${stopID}`)).json();
-        console.debug({realtimeData});
-        setApiResults(realtimeData);
+        // GraphQL Query
+        const apiResponse = (await (await fetch(`${API_URL}/graphql`, {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({query: `{ trainStation(station: "${stopID}") { StationCode, StationDesc, live {Duein} } }`})
+        })).json()).data.trainStation[0];
+        console.debug({apiResponse});
+
+        if (!apiResponse.live || apiResponse.live.length === 0) return setApiResults(true);
+        setApiResults(apiResponse);
     };
 
     useEffect(() => {
