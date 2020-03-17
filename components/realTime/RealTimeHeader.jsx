@@ -1,9 +1,9 @@
-import React from 'react'
-import Link from 'next/link'
+import React from 'react';
+import Link from 'next/link';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faChevronCircleLeft } from '@fortawesome/free-solid-svg-icons'
-import SearchBox from '../search/SearchBox'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronCircleLeft } from '@fortawesome/free-solid-svg-icons';
+import SearchBox from '../search/SearchBox';
 
 const RealTimeHeader = ({ type, icon, colour, stopID, stopLocation, availableOptions, changeValue }) => (
   <div className="realTimeHeader" style={{ backgroundColor: colour }}>
@@ -23,6 +23,6 @@ const RealTimeHeader = ({ type, icon, colour, stopID, stopLocation, availableOpt
     </div>
     <SearchBox defaultValue={stopID} availableOptions={availableOptions} changeValue={changeValue}/>
   </div>
-)
+);
 
-export default RealTimeHeader
+export default RealTimeHeader;

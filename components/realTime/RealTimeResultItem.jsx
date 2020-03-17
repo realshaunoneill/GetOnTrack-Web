@@ -1,5 +1,5 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const RealTimeResultItem = ({ type, route, origin, destination, arrival, late }) => (
   <nav className="level realTimeResultItem">
@@ -28,7 +28,7 @@ const RealTimeResultItem = ({ type, route, origin, destination, arrival, late })
       </div>
     </div>
   </nav>
-)
+);
 
 RealTimeResultItem.propTypes = {
   type: PropTypes.string,
@@ -37,6 +37,6 @@ RealTimeResultItem.propTypes = {
   destination: PropTypes.string,
   arrival: PropTypes.string,
   late: PropTypes.number
-}
+};
 
-export default RealTimeResultItem
+export default RealTimeResultItem;

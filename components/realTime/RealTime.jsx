@@ -1,9 +1,9 @@
-import React from 'react'
-import RealTimeHeader from './RealTimeHeader'
-import RealTimeResults from './RealTimeResults'
-import GoogleMap from '../map/GoogleMap'
+import React from 'react';
+import RealTimeHeader from './RealTimeHeader';
+import RealTimeResults from './RealTimeResults';
+import GoogleMap from '../map/GoogleMap';
 
-import NoResultsFound from '../notifications/NoResults'
+import NoResultsFound from '../notifications/NoResults';
 
 const RealTime = ({ type, colour, icon, stopID, stopLocation, stopCoords, results, availableOptions, changeValue }) => (
   <div className="columns realTime">
@@ -18,6 +18,6 @@ const RealTime = ({ type, colour, icon, stopID, stopLocation, stopCoords, result
       <GoogleMap center={stopCoords}/>
     </div>
   </div>
-)
+);
 
-export default RealTime
+export default RealTime;

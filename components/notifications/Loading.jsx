@@ -1,5 +1,5 @@
-import React from 'react'
-import Loader from 'react-loader-spinner'
+import React from 'react';
+import Loader from 'react-loader-spinner';
 
 const Loading = ({ colour }) => (
   <div className="has-text-centered">
@@ -13,6 +13,6 @@ const Loading = ({ colour }) => (
     <br/>
     <p className="loading-text">Loading.....</p>
   </div>
-)
+);
 
-export default Loading
+export default Loading;

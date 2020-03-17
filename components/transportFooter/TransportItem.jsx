@@ -1,8 +1,8 @@
-import React from 'react'
-import Link from 'next/link'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import React from 'react';
+import Link from 'next/link';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import { faChevronCircleRight } from '@fortawesome/free-solid-svg-icons'
+import { faChevronCircleRight } from '@fortawesome/free-solid-svg-icons';
 
 const TransportItem = ({ type, icon, color, link, isLight = false }) => (
   <Link href={link}>
@@ -21,6 +21,6 @@ const TransportItem = ({ type, icon, color, link, isLight = false }) => (
       </div>
     </a>
   </Link>
-)
+);
 
-export default TransportItem
+export default TransportItem;

@@ -1,17 +1,17 @@
-import React, { useContext } from 'react'
-import { AuthContext } from '../AuthContext'
+import React, { useContext } from 'react';
+import { AuthContext } from '../AuthContext';
 
 const Login = () => {
-  const authUser = useContext(AuthContext)
+  const authUser = useContext(AuthContext);
 
   // Check if ID is real then we're logged in
   if (!authUser.userID) {
-    return <a className="button loginButton is-info" title="Login to user profile"><b>Login</b></a>
+    return <a className="button loginButton is-info" title="Login to user profile"><b>Login</b></a>;
   }
 
   return (
     <span title="Logout">{authUser.userName}</span>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;

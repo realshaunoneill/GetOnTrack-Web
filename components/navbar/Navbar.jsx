@@ -1,12 +1,12 @@
-import React, { useCallback, useState } from 'react'
-import PropTypes from 'prop-types'
-import Link from 'next/link'
-import Login from './Login'
+import React, { useCallback, useState } from 'react';
+import PropTypes from 'prop-types';
+import Link from 'next/link';
+import Login from './Login';
 
 const Navbar = () => {
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false)
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-  const toggleDropdown = useCallback(() => () => setIsDropdownOpen(!isDropdownOpen), [isDropdownOpen])
+  const toggleDropdown = useCallback(() => () => setIsDropdownOpen(!isDropdownOpen), [isDropdownOpen]);
 
   return (
     <nav className="navbar is-fixed-top">
@@ -44,11 +44,11 @@ const Navbar = () => {
         </div>
       </div>
     </nav>
-  )
-}
+  );
+};
 
 Navbar.propTypes = {
   className: PropTypes.string
-}
+};
 
-export default Navbar
+export default Navbar;

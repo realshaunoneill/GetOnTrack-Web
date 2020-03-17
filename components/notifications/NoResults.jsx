@@ -1,6 +1,6 @@
-import React, { Fragment } from 'react'
-import RealTimeResultItem from '../realTime/RealTimeResultItem'
-import Notification from './Notification'
+import React, { Fragment } from 'react';
+import RealTimeResultItem from '../realTime/RealTimeResultItem';
+import Notification from './Notification';
 
 const NoResultsFound = ({ type }) => (
   <Fragment>
@@ -15,6 +15,6 @@ const NoResultsFound = ({ type }) => (
       <RealTimeResultItem type={type}/>
     </div>
   </Fragment>
-)
+);
 
-export default NoResultsFound
+export default NoResultsFound;

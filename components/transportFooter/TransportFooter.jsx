@@ -1,12 +1,12 @@
-import React from 'react'
-import TransportItem from './TransportItem'
+import React from 'react';
+import TransportItem from './TransportItem';
 
-import { DUBLIN_BUS_YELLOW, IRISH_RAIL_GREEN_DARK, LUAS_PURPLE, DUBLIN_BIKES_BLUE } from '../../assets/Colours'
+import { DUBLIN_BUS_YELLOW, IRISH_RAIL_GREEN_DARK, LUAS_PURPLE, DUBLIN_BIKES_BLUE } from '../../assets/Colours';
 
-import busIcon from '../../assets/img/bus.svg'
-import railIcon from '../../assets/img/rail.svg'
-import luasIcon from '../../assets/img/luas.svg'
-import bikeIcon from '../../assets/img/bike.svg'
+import busIcon from '../../assets/img/bus.svg';
+import railIcon from '../../assets/img/rail.svg';
+import luasIcon from '../../assets/img/luas.svg';
+import bikeIcon from '../../assets/img/bike.svg';
 
 const TransportFooter = () => (
   <div className="transportFooter is-hidden-mobile">
@@ -18,6 +18,6 @@ const TransportFooter = () => (
       <TransportItem type="Dublin Bikes" icon={bikeIcon} link="/realtime/dublinbikes" color={DUBLIN_BIKES_BLUE} />
     </div>
   </div>
-)
+);
 
-export default TransportFooter
+export default TransportFooter;

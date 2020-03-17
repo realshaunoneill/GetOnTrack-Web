@@ -1,6 +1,6 @@
-import React from 'react'
-import GoogleMapReact from 'google-map-react'
-import { usePosition } from 'use-position'
+import React from 'react';
+import GoogleMapReact from 'google-map-react';
+import { usePosition } from 'use-position';
 
 const AnyReactComponent = ({ text }) => (
   <div style={{
@@ -16,10 +16,10 @@ const AnyReactComponent = ({ text }) => (
   }}>
     {text}
   </div>
-)
+);
 
 const GoogleMap = ({ center, colour }) => {
-  const { latitude, longitude, timestamp, accuracy, error } = usePosition()
+  const { latitude, longitude, timestamp, accuracy, error } = usePosition();
   return (
     <GoogleMapReact
       bootstrapURLKeys={{ key: 'AIzaSyBk7cQco6GEd2AfR3Ybq5Ppd-Fs9zbBbG8' }}
@@ -32,7 +32,7 @@ const GoogleMap = ({ center, colour }) => {
         text="Current Location"
       />
     </GoogleMapReact>
-  )
-}
+  );
+};
 
-export default GoogleMap
+export default GoogleMap;

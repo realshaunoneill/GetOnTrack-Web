@@ -1,8 +1,8 @@
-import React from 'react'
-import DefaultLayout from '../layouts/default'
-import GoogleMap from '../components/map/GoogleMap'
-import TransportFooter from '../components/transportFooter/TransportFooter'
-import SearchBox from '../components/search/SearchBox'
+import React from 'react';
+import DefaultLayout from '../layouts/default';
+import GoogleMap from '../components/map/GoogleMap';
+import TransportFooter from '../components/transportFooter/TransportFooter';
+import SearchBox from '../components/search/SearchBox';
 
 const Index = () => (
   <DefaultLayout title="Home">
@@ -26,6 +26,6 @@ const Index = () => (
       <TransportFooter/>
     </div>
   </DefaultLayout>
-)
+);
 
-export default Index
+export default Index;
