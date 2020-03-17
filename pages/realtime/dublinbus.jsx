@@ -44,7 +44,7 @@ const DublinBus = ({query}) => {
             const apiResponse = (await (await fetch(`${API_URL}/graphql`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({query: `{ busStop(stopid: "${stopID}") { shortname, latitude, longitude, live {route, duetime, destination, origin, late} } }`})
+                body: JSON.stringify({query: `{ busStop(stopid: "${stopID}") { shortname, latitude, longitude, live {route, duetime, destination, departureduetime, origin, late} } }`})
             })).json()).data.busStop[0];
             console.debug({apiResponse});
             setStopLocationName(apiResponse.shortname);
