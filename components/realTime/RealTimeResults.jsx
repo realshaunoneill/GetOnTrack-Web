@@ -5,15 +5,14 @@ import Loading from "../notifications/Loading";
 import Notification from "../notifications/Notification";
 
 const displayResults = (type, colour, results) => {
-    if (results === true) {
+    if (!Array.isArray(results) || results === true) {
         // Finished loading and there was no results
         return <Notification message="No results found"/>
     }
-    if (results.length === 0 || !Array.isArray(results)) return <Loading colour={colour}/>;
+    if (Array.isArray(results) && results.length === 0) return <Loading colour={colour}/>;
 
-    return results.map(({route, destination, departureduetime, duetime, late}, x) => (
-        <RealTimeResultItem key={x} type={type} number={route} name={destination} departure={departureduetime} arrival={duetime}
-                            late={late}/>
+    return results.map(({route, origin, destination, duetime, late}, x) => (
+        <RealTimeResultItem key={x} type={type} route={route} origin={origin} destination={destination} arrival={duetime} late={late}/>
     ))
 };
 

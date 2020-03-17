@@ -17,8 +17,15 @@ const SearchBox = ({defaultValue, availableOptions = [], changeValue}) => {
 
     const getItemTemplate = option => (
         <div>
-            <div className="itemText">
-                {option}
+            <div className='p-clearfix'>
+                <img
+                    alt={option}
+                    src={`https://raw.githubusercontent.com/primefaces/primereact/master/public/showcase/resources/demo/images/car/${"Audi"}.png`}
+                    style={{ width: '32px', display: 'inline-block', margin: '5px 0 2px 5px' }}
+                />
+                <div style={{ fontSize: '18px', float: 'right', margin: '10px 10px 0 0' }}>
+                    {option}
+                </div>
             </div>
         </div>
     );
