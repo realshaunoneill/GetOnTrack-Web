@@ -6,8 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint .",
-    "lint:fix": "eslint --fix ."
+    "lint": "eslint --ext .jsx .",
+    "lint:fix": "eslint --fix --ext .jsx ."
   },
   "dependencies": {
     "@bit/primefaces.primereact.autocomplete": "^3.1.8",
