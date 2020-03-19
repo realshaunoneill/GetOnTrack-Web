@@ -1,20 +1,17 @@
-import React, { Fragment, useState } from 'react';
+import React, {Fragment} from 'react';
 import PropTypes from 'prop-types';
 
 import Meta from '../components/Meta';
+import Navbar from '../components/navbar/Navbar';
 
 import styles from '../assets/styles/styles.scss';
-import Navbar from '../components/navbar/Navbar';
-import AuthProvider from '../components/AuthContext';
 
-const DefaultLayout = ({ title, children }) => {
+const DefaultLayout = ({title, children}) => {
   return (
     <Fragment>
       <Meta title={title}/>
-      <AuthProvider>
-        <Navbar/>
-        {children}
-      </AuthProvider>
+      <Navbar/>
+      {children}
     </Fragment>
   );
 };
