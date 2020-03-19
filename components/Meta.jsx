@@ -4,7 +4,8 @@ import Head from 'next/dist/next-server/lib/head';
 const Meta = ({ title }) => (
   <Head>
     <title>{title} ❯ Transport Ireland+</title>
-    <link rel='icon' href='/favicon.ico' />
+    <link
+      rel='icon' href='/favicon.ico' />
   </Head>
 );
 

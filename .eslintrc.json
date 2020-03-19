@@ -23,6 +23,7 @@
     ],
     "rules": {
         "semi": [2, "always"],
-        "react/react-in-jsx-scope": "off"
+        "react/react-in-jsx-scope": "off",
+        "react/jsx-first-prop-new-line": [2, "always"]
     }
 }

@@ -6,11 +6,13 @@ const Login = () => {
 
   // Check if ID is real then we're logged in
   if (!authUser.userID) {
-    return <a className="button loginButton is-info" title="Login to user profile"><b>Login</b></a>;
+    return <a
+      className="button loginButton is-info" title="Login to user profile"><b>Login</b></a>;
   }
 
   return (
-    <span title="Logout">{authUser.userName}</span>
+    <span
+      title="Logout">{authUser.userName}</span>
   );
 };
 

@@ -12,12 +12,13 @@ const AuthProvider = ({ children }) => {
   };
 
   return (
-    <AuthContext.Provider value={{
-      userID,
-      setUserID,
-      userName,
-      setUserName
-    }}>
+    <AuthContext.Provider
+      value={{
+        userID,
+        setUserID,
+        userName,
+        setUserName
+      }}>
       {children}
     </AuthContext.Provider>
   );

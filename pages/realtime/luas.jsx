@@ -26,8 +26,10 @@ const Luas = ({ query }) => {
   });
 
   return (
-    <DefaultLayout title="Search Results">
-      <RealTime type="Luas" colour={LUAS_PURPLE} icon={luasIcon} stopID={123} stopLocation="Blanchardstown"
+    <DefaultLayout
+      title="Search Results">
+      <RealTime
+        type="Luas" colour={LUAS_PURPLE} icon={luasIcon} stopID={123} stopLocation="Blanchardstown"
         results={apiResults} stopCoords={{ lat: 52.35, lng: -6.40 }}/>
     </DefaultLayout>
   );

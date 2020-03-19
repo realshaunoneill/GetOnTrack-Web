@@ -2,7 +2,8 @@ import React from 'react';
 import Loader from 'react-loader-spinner';
 
 const Loading = ({ colour }) => (
-  <div className="has-text-centered">
+  <div
+    className="has-text-centered">
     <Loader
       className="loading has-text-centered"
       type="Puff"
@@ -11,7 +12,8 @@ const Loading = ({ colour }) => (
       width={200}
     />
     <br/>
-    <p className="loading-text">Loading.....</p>
+    <p
+      className="loading-text">Loading.....</p>
   </div>
 );
 

@@ -30,8 +30,10 @@ const DublinBikes = ({ query }) => {
   });
 
   return (
-    <DefaultLayout title="Search Results">
-      <RealTime type="Dublin Bikes" colour={DUBLIN_BIKES_BLUE} icon={bikeIcon} stopID={123}
+    <DefaultLayout
+      title="Search Results">
+      <RealTime
+        type="Dublin Bikes" colour={DUBLIN_BIKES_BLUE} icon={bikeIcon} stopID={123}
         stopLocation="Blanchardstown"
         results={apiResults} stopCoords={{ lat: 52.35, lng: -6.40 }}/>
     </DefaultLayout>

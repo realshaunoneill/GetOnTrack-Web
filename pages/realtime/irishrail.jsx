@@ -65,9 +65,14 @@ const IrishRail = ({ query }) => {
   }, [setAllRoutes, setStopID, setStopLocationName, setStopCoords, setApiResults]);
 
   return (
-    <DefaultLayout title="Search Results">
-      <RealTime type="Irish Rail" colour={IRISH_RAIL_GREEN} icon={irishRail} stopID={stopID} stopLocation={stopLocationName}
-        stopCoords={stopCoords} results={apiResults} availableOptions={allRoutes.map(item => `${item.StationDesc} - ${item.StationCode}`)} changeValue={(stop) => {
+    <DefaultLayout
+      title="Search Results">
+      <RealTime
+        type="Irish Rail" colour={IRISH_RAIL_GREEN} icon={irishRail} stopID={stopID}
+        stopLocation={stopLocationName}
+        stopCoords={stopCoords} results={apiResults}
+        availableOptions={allRoutes.map(item => `${item.StationDesc} - ${item.StationCode}`)}
+        changeValue={(stop) => {
           if (stop.split('-').length > 1) stop = stop.split('-')[1].trim();
           Router.push(Router.pathname, `/realtime/irishrail?stop=${stop}`, { shallow: true });
           fetchData(stop);

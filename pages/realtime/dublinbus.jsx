@@ -1,10 +1,10 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import Router from 'next/router';
 import DefaultLayout from '../../layouts/default';
 import RealTime from '../../components/realTime/RealTime';
 
 import busIcon from '../../assets/img/bus.svg';
-import {DUBLIN_BUS_YELLOW} from '../../assets/Colours';
+import { DUBLIN_BUS_YELLOW } from '../../assets/Colours';
 
 const API_URL = (process.env.NODE_ENV === 'development' ? 'http://localhost:8080' : 'https://api.getontrack.ie');
 
@@ -65,9 +65,14 @@ const DublinBus = ({ query }) => {
   }, [setAllRoutes, setStopID, setStopLocationName, setStopCoords, setApiResults]);
 
   return (
-    <DefaultLayout title="Search Results">
-      <RealTime type="Dublin Bus" colour={DUBLIN_BUS_YELLOW} icon={busIcon} stopID={stopID} stopLocation={stopLocationName}
-        results={apiResults} stopCoords={stopCoords} availableOptions={allRoutes.map(item => (`${item.shortname} - ${item.stopid}`))} changeValue={(stop) => {
+    <DefaultLayout
+      title="Search Results">
+      <RealTime
+        type="Dublin Bus" colour={DUBLIN_BUS_YELLOW} icon={busIcon} stopID={stopID}
+        stopLocation={stopLocationName}
+        results={apiResults} stopCoords={stopCoords}
+        availableOptions={allRoutes.map(item => (`${item.shortname} - ${item.stopid}`))}
+        changeValue={(stop) => {
           if (stop.split('-').length > 1) stop = stop.split('-')[1].trim();
           Router.push(Router.pathname, `/realtime/dublinbus?stop=${stop}`, { shallow: true });
           fetchData(stop);

@@ -10,7 +10,8 @@ import AuthProvider from '../components/AuthContext';
 const DefaultLayout = ({ title, children }) => {
   return (
     <Fragment>
-      <Meta title={title}/>
+      <Meta
+        title={title}/>
       <AuthProvider>
         <Navbar/>
         {children}

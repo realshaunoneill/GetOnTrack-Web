@@ -17,8 +17,10 @@ const SearchBox = ({ defaultValue, availableOptions = [], changeValue }) => {
 
   const getItemTemplate = option => (
     <div>
-      <div className='p-clearfix'>
-        <div className="itemText">
+      <div
+        className='p-clearfix'>
+        <div
+          className="itemText">
           {option}
         </div>
       </div>
@@ -26,7 +28,8 @@ const SearchBox = ({ defaultValue, availableOptions = [], changeValue }) => {
   );
 
   return (
-    <div className="search">
+    <div
+      className="search">
       <PrimereactStyle/>
       <AutoComplete
         value={value}
@@ -41,8 +44,10 @@ const SearchBox = ({ defaultValue, availableOptions = [], changeValue }) => {
           if (e.key === 'Enter') changeValue(value);
         }}
       />
-      <div className="searchButton button" onClick={() => changeValue(value)}>
-        <FontAwesomeIcon icon={faChevronCircleRight} title="Search"/>
+      <div
+        className="searchButton button" onClick={() => changeValue(value)}>
+        <FontAwesomeIcon
+          icon={faChevronCircleRight} title="Search"/>
       </div>
     </div>
   );

@@ -8,8 +8,10 @@ const AuthCallback = ({ query }) => {
   if (!jwtToken) return ErrorNotification('No token supplied');
 
   return (
-    <DefaultLayout title="Auth Callback">
-      <AuthScreen jwtToken={jwtToken}/>
+    <DefaultLayout
+      title="Auth Callback">
+      <AuthScreen
+        jwtToken={jwtToken}/>
     </DefaultLayout>
   );
 };
