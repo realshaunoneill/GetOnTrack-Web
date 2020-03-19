@@ -2,44 +2,31 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const RealTimeResultItem = ({ type, route, origin, destination, arrival, late }) => (
-  <nav
-    className="level realTimeResultItem">
+  <nav className="level realTimeResultItem">
     {route && (
-      <div
-        className="level-item has-text-centered">
+      <div className="level-item has-text-centered">
         <div>
-          <p
-            className="heading">{type} ROUTE</p>
-          <p
-            className="title">{route}</p>
+          <p className="heading">{type} ROUTE</p>
+          <p className="title">{route}</p>
         </div>
       </div>
     )}
-    <div
-      className="level-item has-text-centered">
+    <div className="level-item has-text-centered">
       <div>
-        <p
-          className="heading">Origin</p>
-        <p
-          className="title">{origin}</p>
+        <p className="heading">Origin</p>
+        <p className="title">{origin}</p>
       </div>
     </div>
-    <div
-      className="level-item has-text-centered">
+    <div className="level-item has-text-centered">
       <div>
-        <p
-          className="heading">Destination</p>
-        <p
-          className="title">{destination}</p>
+        <p className="heading">Destination</p>
+        <p className="title">{destination}</p>
       </div>
     </div>
-    <div
-      className="level-item has-text-centered">
+    <div className="level-item has-text-centered">
       <div>
-        <p
-          className="heading">Arriving</p>
-        <p
-          className="title">{(arrival ? `${arrival} (${late})` : null)}</p>
+        <p className="heading">Arriving</p>
+        <p className="title">{(arrival ? `${arrival} (${late})` : null)}</p>
       </div>
     </div>
   </nav>

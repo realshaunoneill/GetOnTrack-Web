@@ -9,20 +9,13 @@ import luasIcon from '../../assets/img/luas.svg';
 import bikeIcon from '../../assets/img/bike.svg';
 
 const TransportFooter = () => (
-  <div
-    className="transportFooter is-hidden-mobile">
-    <span
-      className="footerTitle"><b>CHOOSE </b>TRANSPORT:</span>
-    <div
-      className="columns is-centered is-multiline">
-      <TransportItem
-        type="Dublin Bus" icon={busIcon} color={DUBLIN_BUS_YELLOW} link="/realtime/dublinbus" isLight={true}/>
-      <TransportItem
-        type="Irish Rail" icon={railIcon} link="/realtime/irishrail" color={IRISH_RAIL_GREEN_DARK}/>
-      <TransportItem
-        type="Luas" icon={luasIcon} link="/realtime/luas" color={LUAS_PURPLE}/>
-      <TransportItem
-        type="Dublin Bikes" icon={bikeIcon} link="/realtime/dublinbikes" color={DUBLIN_BIKES_BLUE} />
+  <div className="transportFooter is-hidden-mobile">
+    <span className="footerTitle"><b>CHOOSE </b>TRANSPORT:</span>
+    <div className="columns is-centered is-multiline">
+      <TransportItem type="Dublin Bus" icon={busIcon} color={DUBLIN_BUS_YELLOW} link="/realtime/dublinbus" isLight={true}/>
+      <TransportItem type="Irish Rail" icon={railIcon} link="/realtime/irishrail" color={IRISH_RAIL_GREEN_DARK}/>
+      <TransportItem type="Luas" icon={luasIcon} link="/realtime/luas" color={LUAS_PURPLE}/>
+      <TransportItem type="Dublin Bikes" icon={bikeIcon} link="/realtime/dublinbikes" color={DUBLIN_BIKES_BLUE} />
     </div>
   </div>
 );

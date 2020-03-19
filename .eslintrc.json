@@ -11,19 +11,13 @@
         "Atomics": "readonly",
         "SharedArrayBuffer": "readonly"
     },
-    "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true
-        },
-        "ecmaVersion": 2018,
-        "sourceType": "module"
-    },
     "plugins": [
         "react"
     ],
     "rules": {
         "semi": [2, "always"],
         "react/react-in-jsx-scope": "off",
-        "react/jsx-first-prop-new-line": [2, "always"]
+        "react/jsx-first-prop-new-line": [2, "multiline"],
+        "react/jsx-max-props-per-line": [2, { "when": "multiline" }]
     }
 }

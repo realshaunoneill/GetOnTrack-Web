@@ -65,12 +65,15 @@ const DublinBus = ({ query }) => {
   }, [setAllRoutes, setStopID, setStopLocationName, setStopCoords, setApiResults]);
 
   return (
-    <DefaultLayout
-      title="Search Results">
+    <DefaultLayout title="Search Results">
       <RealTime
-        type="Dublin Bus" colour={DUBLIN_BUS_YELLOW} icon={busIcon} stopID={stopID}
+        type="Dublin Bus"
+        colour={DUBLIN_BUS_YELLOW}
+        icon={busIcon}
+        stopID={stopID}
         stopLocation={stopLocationName}
-        results={apiResults} stopCoords={stopCoords}
+        results={apiResults}
+        stopCoords={stopCoords}
         availableOptions={allRoutes.map(item => (`${item.shortname} - ${item.stopid}`))}
         changeValue={(stop) => {
           if (stop.split('-').length > 1) stop = stop.split('-')[1].trim();

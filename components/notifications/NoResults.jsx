@@ -4,23 +4,15 @@ import Notification from './Notification';
 
 const NoResultsFound = ({ type }) => (
   <Fragment>
-    <Notification
-      message="No results found"/>
+    <Notification message="No results found"/>
     <br/>
-    <div
-      className="realTimeResults">
-      <RealTimeResultItem
-        type={type}/>
-      <RealTimeResultItem
-        type={type}/>
-      <RealTimeResultItem
-        type={type}/>
-      <RealTimeResultItem
-        type={type}/>
-      <RealTimeResultItem
-        type={type}/>
-      <RealTimeResultItem
-        type={type}/>
+    <div className="realTimeResults">
+      <RealTimeResultItem type={type}/>
+      <RealTimeResultItem type={type}/>
+      <RealTimeResultItem type={type}/>
+      <RealTimeResultItem type={type}/>
+      <RealTimeResultItem type={type}/>
+      <RealTimeResultItem type={type}/>
     </div>
   </Fragment>
 );
