@@ -2,12 +2,12 @@ import React from 'react';
 
 import RealTimeResultItem from './RealTimeResultItem';
 import Loading from '../notifications/Loading';
-import Notification from '../notifications/Notification';
+import NoResultsFound from '../notifications/NoResults';
 
 const displayResults = (type, colour, results) => {
   if (!Array.isArray(results) || results === true) {
     // Finished loading and there was no results
-    return <Notification message="No results found"/>;
+    return <NoResultsFound type={type}/>;
   }
   if (Array.isArray(results) && results.length === 0) return <Loading colour={colour}/>;
 

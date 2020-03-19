@@ -3,12 +3,14 @@ import PropTypes from 'prop-types';
 
 const RealTimeResultItem = ({ type, route, origin, destination, arrival, late }) => (
   <nav className="level realTimeResultItem">
-    <div className="level-item has-text-centered">
-      <div>
-        <p className="heading">{type} ROUTE</p>
-        <p className="title">{route}</p>
+    {route && (
+      <div className="level-item has-text-centered">
+        <div>
+          <p className="heading">{type} ROUTE</p>
+          <p className="title">{route}</p>
+        </div>
       </div>
-    </div>
+    )}
     <div className="level-item has-text-centered">
       <div>
         <p className="heading">Origin</p>

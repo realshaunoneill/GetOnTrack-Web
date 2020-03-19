@@ -11,13 +11,13 @@
 
   .itemImage {
     width: 32px;
-    display: inline-block;
     margin: 5px 0 2px 5px;
+    float: right;
   }
 
   .itemText {
     font-size: 18px;
-    float: right;
+    display: inline-block;
     margin: 10px 10px 0 0;
   }
 }
