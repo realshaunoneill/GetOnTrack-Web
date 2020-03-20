@@ -5,4 +5,4 @@ const withOffline = require('next-offline');
 module.exports = {
   target: 'serverless',
   ...withOffline(withSass(withImages()))
-}
+};

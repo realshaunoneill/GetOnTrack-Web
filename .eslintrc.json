@@ -1,0 +1,23 @@
+{
+    "env": {
+        "browser": true,
+        "es6": true
+    },
+    "extends": [
+        "plugin:react/recommended",
+        "standard"
+    ],
+    "globals": {
+        "Atomics": "readonly",
+        "SharedArrayBuffer": "readonly"
+    },
+    "plugins": [
+        "react"
+    ],
+    "rules": {
+        "semi": [2, "always"],
+        "react/react-in-jsx-scope": "off",
+        "react/jsx-first-prop-new-line": [2, "multiline"],
+        "react/jsx-max-props-per-line": [2, { "when": "multiline" }]
+    }
+}

@@ -1,19 +1,24 @@
 import React from 'react';
-import RealTimeHeader from "./RealTimeHeader";
-import RealTimeResults from "./RealTimeResults";
-import GoogleMap from "../map/GoogleMap";
+import RealTimeHeader from './RealTimeHeader';
+import RealTimeResults from './RealTimeResults';
+import GoogleMap from '../map/GoogleMap';
 
-const RealTime = ({type, colour, icon, stopID, stopLocation, stopCoords, results}) => (
-    <div className="columns realTime">
-        <div className="column">
-            <RealTimeHeader type={type} icon={icon} colour={colour} stopID={stopID} stopLocation={stopLocation}/>
-            <br/>
-            <RealTimeResults type={type} colour={colour} results={results}/>
-        </div>
-        <div className="column map is-one-third">
-            <GoogleMap center={stopCoords}/>
-        </div>
+import NoResultsFound from '../notifications/NoResults';
+
+const RealTime = ({ type, colour, icon, stopID, stopLocation, stopCoords, results, availableOptions, changeValue }) => (
+  <div className="columns realTime">
+    <div className="column">
+      <RealTimeHeader type={type} icon={icon} colour={colour} stopID={stopID} stopLocation={stopLocation} availableOptions={availableOptions} changeValue={changeValue}/>
+      <br/>
+      {stopID ? <RealTimeResults type={type} colour={colour} results={results}/> : <NoResultsFound type={type}/>}
+
     </div>
+    <div
+      className="column map is-one-third"
+      style={{ border: `3px solid ${colour || 'black'}` }}>
+      <GoogleMap center={stopCoords}/>
+    </div>
+  </div>
 );
 
 export default RealTime;

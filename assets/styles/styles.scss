@@ -7,9 +7,11 @@
 @import "components/header";
 @import "components/navbar";
 
-@import "components/fancySearchBox";
+@import "components/search";
 @import "components/transportFooter";
 @import "components/realTime";
+@import "components/loading";
+@import "components/notification";
 
 html, body, #__next, .columns {
   height: 100%;
@@ -29,7 +31,7 @@ html, body, #__next, .columns {
 .columnInfo {
   padding-right: 2.5rem;
   padding-left: 2rem;
-  margin-top: 10rem;
+  margin-top: 6rem;
 }
 
 .columnMap {

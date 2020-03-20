@@ -1,0 +1,23 @@
+.search {
+  .p-autocomplete-input {
+    font-size: 1.5rem !important;
+  }
+
+  .searchButton {
+    font-size: 1.5rem;
+    background-color: transparent;
+    border: 0;
+  }
+
+  .itemImage {
+    width: 32px;
+    margin: 5px 0 2px 5px;
+    float: right;
+  }
+
+  .itemText {
+    font-size: 18px;
+    display: inline-block;
+    margin: 10px 10px 0 0;
+  }
+}

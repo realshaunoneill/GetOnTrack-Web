@@ -1,11 +1,14 @@
 .realTime {
 
   .map {
-    margin-top: 7rem;
+    margin-top: 6.75rem;
+    padding: 0;
+    margin-right: 0.75rem;
+    margin-bottom: 0.75rem
   }
 
   .realTimeHeader {
-    margin-top: 7rem;
+    margin-top: 6rem;
     border-radius: 5px;
     margin-left: 1rem;
     margin-right: 1rem;
@@ -47,6 +50,8 @@
     .realTimeResultItem {
       background-color: whitesmoke;
       border-radius: 5px;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
     }
   }
 }

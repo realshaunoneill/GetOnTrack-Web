@@ -1,27 +1,28 @@
 import React from 'react';
-import Loader from 'react-loader-spinner';
 
-import RealTimeResultItem from "./RealTimeResultItem";
+import RealTimeResultItem from './RealTimeResultItem';
+import Loading from '../notifications/Loading';
+import NoResultsFound from '../notifications/NoResults';
 
 const displayResults = (type, colour, results) => {
-    if (results.length === 0 || !Array.isArray(results)) return <Loader
-        className="loading has-text-centered"
-        type="Puff"
-        color={colour}
-        height={200}
-        width={200}
-    />;
-    return results.map(({number, name, departure, arrival, late}, x) => (
-        <RealTimeResultItem key={x} type={type} number={number} name={name} departure={departure} arrival={arrival}
-                            late={late}/>
-    ))
+  if (!Array.isArray(results) || results === true) {
+    // Finished loading and there was no results
+    return <NoResultsFound type={type}/>;
+  }
+  if (Array.isArray(results) && results.length === 0) {
+    return <Loading colour={colour}/>;
+  }
+
+  return results.map(({ route, origin, destination, duetime, late }, x) => (
+    <RealTimeResultItem key={x} type={type} route={route} origin={origin} destination={destination} arrival={duetime} late={late}/>
+  ));
 };
 
-const RealTimeResults = ({type, colour, results}) => (
-    <div className="realTimeResults">
-        <h1><b>{type}</b> Results:</h1>
-        {displayResults(type, colour, results)};
-    </div>
+const RealTimeResults = ({ type, colour, results }) => (
+  <div className="realTimeResults">
+    <h1><b>{type}</b> Results:</h1>
+    {displayResults(type, colour, results)};
+  </div>
 );
 
 export default RealTimeResults;
