@@ -4,7 +4,7 @@ const USER_ID_KEY = 'userInfo';
 
 export const AuthStateContext = React.createContext(null);
 
-const initialState = { userID: '', userName: '' };
+const initialState = { userObject: '' };
 export const ReducerKeys = {
   setUser: 'setUser', removeUser: 'removeUser'
 };
@@ -13,13 +13,11 @@ const reducer = (state, action) => {
   switch (action.type) {
     case ReducerKeys.setUser:
       return {
-        userID: action.payload.userID,
-        userName: action.payload.userName
+        userObject: action.payload.userObject
       };
     case ReducerKeys.removeUser:
       return {
-        userID: initialState.userID,
-        userName: initialState.userName
+        userObject: initialState.userObject
       };
     default:
       throw new Error(`Unhandled action type: ${action.type}`);

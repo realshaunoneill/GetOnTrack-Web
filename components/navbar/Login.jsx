@@ -14,12 +14,12 @@ const Login = () => {
   };
 
   // Check if ID is real then we're logged in
-  if (!state.userID) {
+  if (!state.userObject.id) {
     return <a href={`${API_URL}/auth/login`} className="button loginButton is-info" title="Login to user profile"><b>Login</b></a>;
   }
 
   return (
-    <div title="Logout" onClick={() => clearUser()}><b>{state.userName}</b></div>
+    <div title="Logout" onClick={() => clearUser()}><b>{state.userObject.displayName}</b></div>
   );
 };
 

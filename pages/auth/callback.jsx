@@ -23,11 +23,10 @@ const AuthCallback = ({ query }) => {
     dispatch({
       type: ReducerKeys.setUser,
       payload: {
-        userID: decodedJwt.id,
-        userName: decodedJwt.displayName
+        userObject: decodedJwt
       }
     });
-    console.debug('Saving user state on login', state);
+    console.debug('Saving user state on login', decodedJwt);
     Router.push('/');
   }, [jwtToken]);
 
