@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Loader from 'react-loader-spinner';
 
-const Loading = ({ colour }) => (
+const Loading = ({ colour = 'black' }) => (
   <div className="has-text-centered">
     <Loader
       className="loading has-text-centered"

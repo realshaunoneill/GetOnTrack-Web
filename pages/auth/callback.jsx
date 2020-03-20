@@ -1,35 +1,37 @@
-import React, { useContext } from 'react';
-import { AuthContext } from '../../components/AuthContext';
+import React, { useEffect } from 'react';
+import Router from 'next/router';
+import jwt from 'jsonwebtoken';
+
+import { ReducerKeys, useAuth } from '../../components/AuthContext';
+import Loading from '../../components/notifications/Loading';
 import DefaultLayout from '../../layouts/default';
-const jwt = require('jsonwebtoken');
 
 const AuthCallback = ({ query }) => {
   const jwtToken = query.token;
   if (!jwtToken) return ErrorNotification('No token supplied');
 
-  return (
-    <DefaultLayout title="Auth Callback">
-      <AuthScreen jwtToken={jwtToken}/>
-    </DefaultLayout>
-  );
-};
-
-const AuthScreen = ({ jwtToken }) => {
-  // Check if the JWT is valid before we store it in local storage
   let decodedJwt;
   try {
     decodedJwt = jwt.decode(jwtToken);
-    // console.log(decodedJwt);
   } catch (err) {
     return ErrorNotification('Unable to decode JWT');
   }
 
-  const authUser = useContext(AuthContext);
-  authUser.setUserID(decodedJwt.id);
-  authUser.setUserName(decodedJwt.displayName);
-  console.debug({authUser});
+  // eslint-disable-next-line no-unused-vars
+  const [state, dispatch] = useAuth();
+  useEffect(() => {
+    dispatch({
+      type: ReducerKeys.setUser,
+      payload: {
+        userID: decodedJwt.id,
+        userName: decodedJwt.displayName
+      }
+    });
+    Router.push('/');
+  }, [jwtToken]);
+
   return (
-    <div>{jwtToken}</div>
+    <Loading/>
   );
 };
 

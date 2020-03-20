@@ -1,27 +1,49 @@
-import React, { createContext, useState, useCallback } from 'react';
+import React, { useReducer, useContext, useEffect } from 'react';
 
-export const AuthContext = createContext(null);
+const USER_ID_KEY = 'userInfo';
 
-const AuthProvider = ({ children }) => {
-  const [userID, setUserID] = useState(null);
-  const [userName, setUserName] = useState(null);
+export const AuthStateContext = React.createContext(null);
 
-  const testSave = (data) => {
-    console.log(data);
-    setAuthUser(data);
-  };
+const initialState = { userID: '', userName: '' };
+export const ReducerKeys = {
+  setUser: 'setUser', removeUser: 'removeUser'
+};
+
+const reducer = (state, action) => {
+  switch (action.type) {
+    case ReducerKeys.setUser:
+      return {
+        userID: action.payload.userID,
+        userName: action.payload.userName
+      };
+    case ReducerKeys.removeUser:
+      return {
+        userID: initialState.userID,
+        userName: initialState.userName
+      };
+    default:
+      throw new Error(`Unhandled action type: ${action.type}`);
+  }
+};
+
+export const AuthProvider = ({ children }) => {
+  let localState = null;
+  if (typeof localStorage !== 'undefined' && localStorage.getItem(USER_ID_KEY)) {
+    localState = JSON.parse(localStorage.getItem(USER_ID_KEY) || '');
+  }
+  const [state, dispatch] = useReducer(reducer, localState || initialState);
+
+  if (typeof localStorage !== 'undefined') {
+    useEffect(() => {
+      localStorage.setItem(USER_ID_KEY, JSON.stringify(state));
+    }, [state]);
+  }
 
   return (
-    <AuthContext.Provider
-      value={{
-        userID,
-        setUserID,
-        userName,
-        setUserName
-      }}>
+    <AuthStateContext.Provider value={[state, dispatch]}>
       {children}
-    </AuthContext.Provider>
+    </AuthStateContext.Provider>
   );
 };
 
-export default AuthProvider;
+export const useAuth = () => useContext(AuthStateContext);
