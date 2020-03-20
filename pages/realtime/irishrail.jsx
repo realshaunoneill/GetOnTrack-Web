@@ -32,7 +32,7 @@ const IrishRail = ({ query }) => {
         body: JSON.stringify({ query: '{ trainStation { StationCode, StationDesc } }' })
       })).json();
       setAllRoutes(allRoutes.data.trainStation);
-      console.debug({ allRoutes });
+      console.debug('Fetched all available Irish Rail stations', allRoutes);
     }
 
     if (!stopID) return null;
@@ -44,7 +44,7 @@ const IrishRail = ({ query }) => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ query: `{ trainStation(station: "${stopID}") { StationCode, StationDesc, StationLatitude, StationLongitude, live {Destination, Origin, Duein, Late} } }` })
     })).json()).data.trainStation[0];
-    console.debug({ apiResponse });
+    console.debug('Fetched Irish Rail live station information', stopID, apiResponse);
 
     setStopLocationName(apiResponse.StationDesc);
     setStopCoords({ lat: apiResponse.StationLatitude, lng: apiResponse.StationLongitude });

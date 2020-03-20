@@ -34,7 +34,7 @@ const DublinBus = ({ query }) => {
           body: JSON.stringify({ query: '{ busStop { stopid, shortname } }' })
         })).json();
         setAllRoutes(allRoutes.data.busStop);
-        console.debug({ allRoutes });
+        console.debug('Fetched all available Dublin Bus routes', allRoutes);
       }
 
       if (!stopID) return null;
@@ -46,14 +46,14 @@ const DublinBus = ({ query }) => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ query: `{ busStop(stopid: "${stopID}") { shortname, latitude, longitude, live {route, duetime, destination, origin, late} } }` })
       })).json()).data.busStop[0];
-      console.debug({ apiResponse });
+      console.debug('Fetched DublinBus live stop information', stopID, apiResponse);
       setStopLocationName(apiResponse.shortname);
       setStopCoords({ lat: apiResponse.latitude, lng: apiResponse.longitude });
 
       if (!apiResponse.live || apiResponse.live.length === 0) return setApiResults(true);
       setApiResults(apiResponse.live); // TODO Make sure this returns correctly
     } catch (err) {
-      console.error(`Unable to fetch API response for Dublin Bus: ${err.stack}`);
+      console.error('Unable to fetch API response for Dublin Bus', err.stack);
       setApiResults(true);
     }
   };
