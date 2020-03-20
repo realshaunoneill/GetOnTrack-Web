@@ -4,7 +4,7 @@ import jwt from 'jsonwebtoken';
 
 import { ReducerKeys, useAuth } from '../../components/AuthContext';
 import Loading from '../../components/notifications/Loading';
-import DefaultLayout from '../../layouts/default';
+import DefaultLayout from '../../layouts/default'; // TODO Needed for some reason
 
 const AuthCallback = ({ query }) => {
   const jwtToken = query.token;
@@ -27,6 +27,7 @@ const AuthCallback = ({ query }) => {
         userName: decodedJwt.displayName
       }
     });
+    console.debug('Saving user state on login', state);
     Router.push('/');
   }, [jwtToken]);
 
