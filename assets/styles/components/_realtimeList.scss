@@ -1,0 +1,44 @@
+.realtimeList {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+
+  span {
+    font-size: 2rem;
+    margin-bottom: 4rem;
+    margin-left: 2rem;
+  }
+
+  div {
+    margin-top: 1rem;
+  }
+
+  .realtime-container {
+    position: relative;
+
+    &:not(:first-child) {
+      top: -5rem;
+
+      &:not(:nth-child(2)) {
+        top: -10rem;
+      }
+
+      &:last-child {
+        top: -15rem;
+      }
+    }
+
+    .realtime-item {
+      color: white;
+      position: relative;
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+      font-size: 3rem;
+      border-radius: 10px;
+      box-shadow: 0 0 5px 10px white inset;
+
+      p {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}

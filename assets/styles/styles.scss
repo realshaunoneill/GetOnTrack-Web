@@ -6,12 +6,14 @@
 
 @import "components/header";
 @import "components/navbar";
+@import "components/footer";
 
 @import "components/search";
 @import "components/transportFooter";
 @import "components/realTime";
 @import "components/loading";
 @import "components/notification";
+@import "components/realtimeList";
 
 html, body, #__next, .columns {
   height: 100%;
