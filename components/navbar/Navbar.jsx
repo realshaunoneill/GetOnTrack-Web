@@ -9,7 +9,7 @@ const Navbar = () => {
   const toggleDropdown = useCallback(() => () => setIsDropdownOpen(!isDropdownOpen), [isDropdownOpen]);
 
   return (
-    <nav className="navbar is-fixed-top">
+    <nav className="navbar is-fixed-top is-dark">
       <div className="navbar-brand">
         <Link href="/">
           <a className={`${isDropdownOpen ? 'is-active' : ''} navbar-item navbar-title`}>
