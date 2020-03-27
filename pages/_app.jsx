@@ -1,10 +1,13 @@
 import React from 'react';
 
 import {AuthProvider} from '../components/AuthContext';
+import {DataProvider} from '../components/DataContext';
 
 const App = ({Component, pageProps}) => (
   <AuthProvider>
-    <Component {...pageProps}/>
+    <DataProvider>
+      <Component {...pageProps}/>
+    </DataProvider>
   </AuthProvider>
 );
 

@@ -11,7 +11,7 @@ import Luas from '../../assets/img/luas.svg';
 import Bike from '../../assets/img/bike.svg';
 
 const RealTimeItem = ({ type, colour, subtext, icon, link, isRight }) => {
-  const style = { backgroundColor: colour, border: `5px ${colour} solid` };
+  const style = {backgroundColor: colour, outline: `5px ${colour} solid`};
   if (isRight) style.right = '-20px';
   else style.left = '-20px';
 
