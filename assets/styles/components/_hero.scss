@@ -1,10 +1,10 @@
 .hero.is-dark {
   background-color: $colorPrimary;
-  // clip-path: polygon(0 100%, 0 60%, 100% 100%);
 
   .header-container {
     width: 100%;
     height: 40rem;
+    z-index: 3;
 
     .columns {
       height: 100%;
@@ -37,6 +37,20 @@
     .columnMap div {
       border-radius: 5px;
       //border: 2px solid $colorSecondry;
+    }
+  }
+
+  .design-container {
+    filter: drop-shadow(15px -15px 5px $colorPrimary);
+
+    .design {
+      position: absolute;
+      z-index: 1;
+      width: 100%;
+      bottom: 0;
+      padding-top: 60rem;
+      clip-path: polygon(0 100%, 0 60%, 100% 98%, 100% 100%);
+      background-color: $colorSecondry;
     }
   }
 }

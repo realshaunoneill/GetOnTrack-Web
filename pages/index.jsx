@@ -34,6 +34,9 @@ const Index = () => (
           </div>
         </div>
       </div>
+      <div className="design-container">
+        <div className="design"/>
+      </div>
     </section>
     <FeaturesBar/>
     <RealTimeList/>
