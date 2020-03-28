@@ -1,8 +1,11 @@
 .features-bar {
-  background-color: #111;
+  background-color: $colorPrimary;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
 
   .feature-item {
-    color: white;
-    //background-color: white;
+    color: black;
+    background-color: white;
   }
 }

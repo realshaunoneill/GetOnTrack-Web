@@ -1,14 +1,14 @@
 .navbar {
-  background-color: #111 !important;
+  background-color: $colorPrimary !important;
   border-bottom: 2px solid $colorAccent;
 
   .navbar-title:hover {
-    background-color: transparent;
+    background-color: inherit !important;
     color: inherit;
   }
 
   .navbar-item:hover:not(.navbar-title) {
-    background-color: transparent;
+    background-color: inherit !important;
     border-bottom: 0;
   }
 

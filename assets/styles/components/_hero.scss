@@ -1,5 +1,6 @@
 .hero.is-dark {
-  background-color: #111;
+  background-color: $colorPrimary;
+  // clip-path: polygon(0 100%, 0 60%, 100% 100%);
 
   .header-container {
     width: 100%;
@@ -10,10 +11,8 @@
     }
 
     .columnInfo {
-      background-color: white;
       margin-right: 2rem;
       padding-left: 1rem;
-      border-radius: 5px;
 
       .info-container {
         padding-left: 1rem;
@@ -22,15 +21,21 @@
       .header-title {
         font-size: 4rem;
         font-weight: bold;
-        color: black;
 
         b {
+          padding-left: 4rem;
           color: #0c7908;
         }
       }
+
+      .header-subtitle {
+        font-size: 1.5rem;
+        margin-top: -1.25rem;
+      }
     }
 
-    .columnMap {
+    .columnMap div {
+      border-radius: 5px;
       //border: 2px solid $colorSecondry;
     }
   }
