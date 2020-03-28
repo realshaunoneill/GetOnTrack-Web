@@ -34,8 +34,8 @@ const Navbar = () => {
         </div>
         <div className="navbar-end">
           <div className="navbar-item">
-            <a href="https://docs.getontrack.ie" className="button supportButton is-warning" target="_blank">
-                            API Documentation
+            <a href="https://docs.getontrack.ie" className="button supportButton is-info" target="_blank">
+              API Documentation
             </a>
           </div>
           <div className="navbar-item">

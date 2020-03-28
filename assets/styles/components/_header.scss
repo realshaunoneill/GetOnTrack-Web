@@ -1,21 +1,57 @@
-.hero {
-  z-index: -5;
-}
+.hero.is-dark {
+  background-color: $colorSecondry;
 
-.header {
-  font-family: "Helvetica Neue", sans-serif;
-  color: whitesmoke;
+  .header-container {
+    width: 100%;
+    height: 40rem;
+    z-index: 3;
 
-  .header-title {
-    line-height: 4rem;
-    font-size: 5.5rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    margin-bottom: 1rem;
+    .columns {
+      height: 100%;
+    }
+
+    .columnInfo {
+      margin-right: 2rem;
+      padding-left: 1rem;
+
+      .info-container {
+        padding-left: 1rem;
+      }
+
+      .header-title {
+        font-size: 4rem;
+        font-weight: bold;
+
+        b {
+          padding-left: 4rem;
+          color: $colorSecondry;
+        }
+      }
+
+      .header-subtitle {
+        font-size: 1.5rem;
+        margin-top: -1.25rem;
+      }
+    }
+
+    .columnMap div {
+      border-radius: 5px;
+      //border: 2px solid $colorSecondry;
+    }
   }
 
-  .header-subtitle {
-    font-size: 1.5rem;
-    padding-left: 3rem;
+  .design-container {
+    filter: drop-shadow(0px 5px 15px $colorPrimaryLight);
+
+    .design {
+      position: absolute;
+      z-index: 1;
+      width: 100%;
+      bottom: 0;
+      padding-top: 60rem;
+      //clip-path: polygon(0 100%, 0 60%, 100% 98%, 100% 100%);
+      clip-path: polygon(0 70%, 0 0, 100% 0, 100% 97%);
+      background-color: $colorPrimary;
+    }
   }
 }

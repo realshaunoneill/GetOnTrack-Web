@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 
 import Meta from '../components/Meta';
-import Navbar from '../components/navbar/Navbar';
+import Navbar from '../components/header/Navbar';
 import Footer from '../components/footer/Footer';
 
 import styles from '../assets/styles/styles.scss';
