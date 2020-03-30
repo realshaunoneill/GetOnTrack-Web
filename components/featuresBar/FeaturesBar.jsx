@@ -1,19 +1,24 @@
 import React from 'react';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 
-const FeatureItem = ({title, subtitle, columnSize}) => (
+import {faClock, faMobileAlt, faBookmark} from "@fortawesome/free-solid-svg-icons";
+
+const FeatureItem = ({title, icon, columnSize}) => (
   <div className={`column has-text-centered ${columnSize || null}`}>
     <div className="feature-item">
-      <p className="heading">{title}</p>
-      <p className="title">{subtitle}</p>
+      <FontAwesomeIcon className="icon is-large" icon={icon}/>
+      <p className="subtitle">{title}</p>
     </div>
   </div>
 );
 
 const FeaturesBar = () => (
-  <div className="columns is-centered features-bar">
-    <FeatureItem title="Feature 1" subtitle="Loads" columnSize="is-one-fifth"/>
-    <FeatureItem title="Feature 1" subtitle="Loads" columnSize="is-one-third"/>
-    <FeatureItem title="Feature 1" subtitle="Loads" columnSize="is-one-fifth"/>
+  <div className="features-bar">
+    <div className="columns is-centered">
+      <FeatureItem title="Live up-to-date arrival times!" icon={faClock} columnSize="is-one-fifth"/>
+      <FeatureItem title="Check out the easy to use mobile app" icon={faMobileAlt} columnSize="is-one-third"/>
+      <FeatureItem title="Bookmark your favourite stops!" icon={faBookmark} columnSize="is-one-fifth"/>
+    </div>
   </div>
 );
 

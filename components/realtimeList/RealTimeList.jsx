@@ -58,12 +58,42 @@ const RealTimeItem = ({ type, colour, subtext, icon, link, isRight }) => {
 
 const RealTimeList = () => (
   <div className="realtimeList">
-    <span className="footerTitle"><b>REALTIME </b>INFORMATION:</span>
+    <div className="realtimelist-header">
+      <h1 className="title"><b>REALTIME </b>INFORMATION:</h1>
+      <p className="subtitle">Click on any of the available modes of transport to view more information!</p>
+    </div>
     <div>
-      <RealTimeItem type="Dublin Bus" subtext="500 amazing stops near you" colour={DUBLIN_BUS_YELLOW} icon={Bus} link="/realtime/dublinbus" isRight={false}/>
-      <RealTimeItem type="Irish Rail" subtext="500 amazing stops near you" colour={IRISH_RAIL_GREEN} icon={Rail} link="/realtime/irishrail" isRight={true}/>
-      <RealTimeItem type="Luas" subtext="500 amazing stops near you" colour={LUAS_PURPLE} icon={Luas} link="/realtime/luas" isRight={false}/>
-      <RealTimeItem type="Dublin Bikes" subtext="500 amazing stops near you" colour={DUBLIN_BIKES_BLUE} icon={Bike} link="/realtime/dublinbikes" isRight={true}/>
+      <RealTimeItem
+        type="Dublin Bus"
+        subtext="500 amazing stops near you"
+        colour={DUBLIN_BUS_YELLOW}
+        icon={Bus}
+        link="/realtime/dublinbus"
+        isRight={false}/>
+      <RealTimeItem
+        type="Irish Rail"
+        subtext="500 amazing stops near you"
+        colour={IRISH_RAIL_GREEN}
+        icon={Rail}
+        link="/realtime/irishrail"
+        isRight={true}/>
+      <RealTimeItem
+        type="Luas"
+        subtext="500 amazing stops near you"
+        colour={LUAS_PURPLE}
+        icon={Luas}
+        link="/realtime/luas"
+        isRight={false}/>
+      <RealTimeItem
+        type="Dublin Bikes"
+        subtext="500 amazing stops near you"
+        colour={DUBLIN_BIKES_BLUE}
+        icon={Bike}
+        link="/realtime/dublinbikes"
+        isRight={true}/>
+    </div>
+    <div className="design-container">
+      <div className="design"/>
     </div>
   </div>
 );

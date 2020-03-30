@@ -1,10 +1,11 @@
 .features-bar {
   background-color: $colorPrimary;
   margin: 0;
-  padding: 1rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 
   .feature-item {
-    color: black;
+    color: $colorSecondry;
     background-color: white;
     border-radius: 5px;
     padding-top: 0.5rem;

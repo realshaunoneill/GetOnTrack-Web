@@ -23,7 +23,7 @@
         font-weight: bold;
 
         b {
-          padding-left: 4rem;
+          padding-left: 2rem;
           color: $colorSecondry;
         }
       }
@@ -41,7 +41,7 @@
   }
 
   .design-container {
-    filter: drop-shadow(0px 5px 15px $colorPrimaryLight);
+    filter: drop-shadow(0px 15px 15px $colorPrimaryLight);
 
     .design {
       position: absolute;
