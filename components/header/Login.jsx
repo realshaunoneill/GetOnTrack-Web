@@ -19,7 +19,10 @@ const Login = () => {
   }
 
   return (
-    <div title="Logout" onClick={() => clearUser()}><b>{state.userObject.displayName}</b></div>
+    <div title="Logout" className="button" onClick={() => clearUser()}>
+      <img className="login-picture" alt="Profile Picture" src={state.userObject.picture}/>&nbsp;
+      <b>{state.userObject.displayName}</b>
+    </div>
   );
 };
 

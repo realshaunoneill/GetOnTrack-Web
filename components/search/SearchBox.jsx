@@ -26,7 +26,7 @@ const SearchBox = ({ defaultValue, availableOptions = [], changeValue }) => {
   );
 
   return (
-    <div className="search">AA
+    <div className="search">
       <PrimereactStyle/>
       <AutoComplete
         value={value}
