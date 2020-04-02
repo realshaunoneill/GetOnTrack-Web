@@ -1,7 +1,9 @@
 import React, { useCallback, useState } from 'react';
 import PropTypes from 'prop-types';
 import Link from 'next/link';
+
 import Login from './Login';
+import SettingsNavItem from '../settingsModal/SettingNavItem';
 
 const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -16,19 +18,17 @@ const Navbar = () => {
             <b>GetOnTrack</b>
           </a>
         </Link>
-
         <div className="navbar-burger burger" id="burgerToggle" onClick={toggleDropdown}>
           <span aria-hidden="true"/>
           <span aria-hidden="true"/>
           <span aria-hidden="true"/>
         </div>
       </div>
-
       <div className="navbar-menu" id="nav-bar">
         <div className="navbar-start">
           <Link href="/timetables">
             <a className="navbar-item">
-                            Timetables
+              Timetables
             </a>
           </Link>
         </div>
@@ -41,6 +41,7 @@ const Navbar = () => {
           <div className="navbar-item">
             <Login/>
           </div>
+          <SettingsNavItem/>
         </div>
       </div>
     </nav>

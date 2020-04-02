@@ -1,6 +1,9 @@
 .navbar {
   background-color: $colorPrimary !important;
   border-bottom: 2px solid $colorAccent;
+  padding-left: 1rem;
+  padding-right: 1rem;
+
 
   .navbar-title:hover {
     background-color: inherit !important;
