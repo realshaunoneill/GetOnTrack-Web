@@ -12,10 +12,10 @@ const Login = () => {
   }
 
   return (
-    <div title="Logout" className="button">
+    <a className="button">
       <img className="login-picture" alt="Profile Picture" src={state.userObject.picture}/>&nbsp;
       <b>{state.userObject.displayName}</b>
-    </div>
+    </a>
   );
 };
 

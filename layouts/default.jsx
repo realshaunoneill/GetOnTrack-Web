@@ -19,16 +19,16 @@ const DefaultLayout = ({title, children}) => {
     const apiData = await (await fetch(`${API_URL}/graphql`, {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({query: '{ busStop { shortname, latitude, longitude }, trainStation { StationDesc, StationLatitude, StationLongitude}, luasStops {shortName, coordinates {latitude, longitude}}, bikeStation {name, position {lat, lng}} }'})
+      body: JSON.stringify({query: '{ busStop { stopid, shortname, latitude, longitude }, trainStation { StationId, StationDesc, StationLatitude, StationLongitude}, luasStops {shortName, coordinates {latitude, longitude}}, bikeStation {name, position {lat, lng}} }'})
     })).json();
-    console.debug(`Fetched API stop information`, apiData);
+    console.debug('Fetched API stop information', apiData);
     dispatch({
       type: ReducerKeys.setStops,
       payload: {
         dublinBusStops: apiData.data.busStop,
         irishRailStops: apiData.data.trainStation,
         luasStops: apiData.data.luasStops,
-        dublinBikesStops: apiData.data.bikeStation,
+        dublinBikesStops: apiData.data.bikeStation
       }
     });
   };

@@ -7,7 +7,7 @@ const Footer = () => (
         <a href="https://twitter.com/getontrackapp">Twitter</a>
         <br/>
         <b>getontrack.ie</b> developed and maintained by <a href="https://www.shaunoneill.com">shaunoneill.com</a>
-        <p>Copyright © Shaun O'Neill, 2020. All rights reserved.</p>
+        Copyright © Shaun O'Neill, 2020. All rights reserved.
       </p>
     </div>
   </footer>
