@@ -1,6 +1,7 @@
 import React from 'react';
 import GoogleMapReact from 'google-map-react';
-import { usePosition } from 'use-position';
+import {usePosition} from 'use-position';
+import {useData} from "../DataContext";
 
 const AnyReactComponent = ({ text }) => (
   <div
@@ -20,11 +21,15 @@ const AnyReactComponent = ({ text }) => (
 );
 
 const GoogleMap = ({ center, colour }) => {
-  const { latitude, longitude, timestamp, accuracy, error } = usePosition();
+  const {latitude, longitude, timestamp, accuracy, error} = usePosition();
+  const [state, dispatch] = useData();
+
+  console.debug(`Map`, state);
+
   return (
     <GoogleMapReact
-      bootstrapURLKeys={{ key: 'AIzaSyBk7cQco6GEd2AfR3Ybq5Ppd-Fs9zbBbG8' }}
-      defaultCenter={{ lat: 53.35, lng: -6.40 }}
+      bootstrapURLKeys={{key: 'AIzaSyBk7cQco6GEd2AfR3Ybq5Ppd-Fs9zbBbG8'}}
+      defaultCenter={{lat: 53.35, lng: -6.40}}
       defaultZoom={11}
     >
       <AnyReactComponent

@@ -5,33 +5,26 @@ const DATA_STORE_KEY = 'dataStore';
 export const DataStateContext = React.createContext(null);
 
 const initialState = {dublinBusStops: '', irishRailStops: '', luasStops: '', dublinBikesStops: ''};
-const transportData = {dublinBusStops: '', irishRailStops: '', luasStops: '', dublinBikesStops: ''};
 
 export const ReducerKeys = {
-  setDublinBus: 'setDublinBus', setIrishRail: 'setIrishRail', setLuas: 'setLuas', setDublinBikes: 'setDublinBikes'
+  setStops: 'setStops', clearStops: 'clearStops'
 };
 
 const reducer = (state, action) => {
   switch (action.type) {
-    case ReducerKeys.setDublinBus:
+    case ReducerKeys.setStops:
       return {
-        ...transportData,
         dublinBusStops: action.payload.dublinBusStops,
-      };
-    case ReducerKeys.setIrishRail:
-      return {
-        ...transportData,
         irishRailStops: action.payload.irishRailStops,
-      };
-    case ReducerKeys.setLuas:
-      return {
-        ...transportData,
         luasStops: action.payload.luasStops,
+        dublinBikesStops: action.payload.dublinBikesStops
       };
-    case ReducerKeys.setDublinBikes:
+    case ReducerKeys.clearStops:
       return {
-        ...transportData,
-        dublinBikesStops: action.payload.dublinBikesStops,
+        dublinBusStops: initialState.dublinBusStops,
+        irishRailStops: initialState.irishRailStops,
+        luasStops: initialState.luasStops,
+        dublinBikesStops: initialState.dublinBikesStops
       };
     default:
       throw new Error(`Unhandled action type: ${action.type}`);
