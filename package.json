@@ -29,7 +29,10 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-loader-spinner": "^3.1.5",
-    "use-position": "0.0.6"
+    "swr": "^0.2.0",
+    "supercluster": "^7.0.0",
+    "use-position": "0.0.6",
+    "use-supercluster": "^0.2.6"
   },
   "devDependencies": {
     "eslint": "^6.8.0",

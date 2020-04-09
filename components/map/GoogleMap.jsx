@@ -42,3 +42,4 @@ const GoogleMap = ({ center, colour }) => {
 };
 
 export default GoogleMap;
+
