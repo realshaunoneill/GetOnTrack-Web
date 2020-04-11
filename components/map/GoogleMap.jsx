@@ -20,10 +20,10 @@ const Point = ({text, lat, lng, colour}) => (
   </div>
 );
 
-const getAllPoints = ({dublinBusStops, irishRailStops, luasStops, dublinBikesStops}) => {
+const getAllPoints = (stops) => {
   try {
-    console.debug({irishRailStops});
-    const busPoints = dublinBusStops.map((busStop, x) => (
+    console.debug({stops})
+    const busPoints = stops.dublinBusStops.map((busStop, x) => (
       (x < 300 && <Point
         key={busStop.stopid}
         text={busStop.stopid}
@@ -32,7 +32,7 @@ const getAllPoints = ({dublinBusStops, irishRailStops, luasStops, dublinBikesSto
         colour={'#ffcf00'}/>)
     ));
 
-    const trainPoints = irishRailStops.map((station, x) => (
+    const trainPoints = stops.irishRailStops.map((station, x) => (
       (x < 100 && <Point
         key={station.StationId}
         text={station.StationId}
@@ -60,7 +60,7 @@ const GoogleMap = ({center, colour}) => {
       defaultCenter={{lat: 53.35, lng: -6.40}}
       defaultZoom={11}
     >
-      {allPoints}
+      {allPoints || []}
     </GoogleMapReact>
   );
 };

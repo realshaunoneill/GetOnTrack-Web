@@ -4,7 +4,7 @@ const DATA_STORE_KEY = 'dataStore';
 
 export const DataStateContext = React.createContext(null);
 
-const initialState = {dublinBusStops: '', irishRailStops: '', luasStops: '', dublinBikesStops: ''};
+const initialState = {dublinBusStops: [], irishRailStops: [], luasStops: [], dublinBikesStops: []};
 
 export const ReducerKeys = {
   setStops: 'setStops', clearStops: 'clearStops'
