@@ -24,7 +24,7 @@ const Header = () => (
                 }}/>
             </div>
           </div>
-          <div className="column is-three-fifths is-hidden-mobile columnMap">
+          <div className="column is-three-fifths is-hidden-mobile is-hidden-tablet columnMap">
             <GoogleMap/>
           </div>
         </div>
