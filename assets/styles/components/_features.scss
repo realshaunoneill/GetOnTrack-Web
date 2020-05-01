@@ -1,0 +1,14 @@
+.features-bar {
+  background-color: $colorPrimary;
+  margin: 0;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+
+  .feature-item {
+    color: $colorSecondry;
+    background-color: white;
+    border-radius: 5px;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+}

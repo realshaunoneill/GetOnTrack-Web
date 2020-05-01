@@ -15,9 +15,21 @@
         "react"
     ],
     "rules": {
-        "semi": [2, "always"],
+        "semi": [
+            2,
+            "always"
+        ],
         "react/react-in-jsx-scope": "off",
-        "react/jsx-first-prop-new-line": [2, "multiline"],
-        "react/jsx-max-props-per-line": [2, { "when": "multiline" }]
+        "react/jsx-first-prop-new-line": [
+            2,
+            "multiline"
+        ],
+        "react/jsx-max-props-per-line": [
+            2,
+            {
+                "when": "multiline"
+            }
+        ],
+        "react/no-unescaped-entities": "off"
     }
 }

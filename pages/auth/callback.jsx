@@ -23,7 +23,7 @@ const AuthCallback = ({ query }) => {
     dispatch({
       type: ReducerKeys.setUser,
       payload: {
-        userObject: decodedJwt
+        userObject: {...decodedJwt, jwtToken}
       }
     });
     console.debug('Saving user state on login', decodedJwt);

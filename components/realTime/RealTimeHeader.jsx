@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronCircleLeft } from '@fortawesome/free-solid-svg-icons';
 import SearchBox from '../search/SearchBox';
+import Favourite from './Favourite';
 
 const RealTimeHeader = ({ type, icon, colour, stopID, stopLocation, availableOptions, changeValue }) => (
   <div className="realTimeHeader" style={{ backgroundColor: colour }}>
@@ -18,10 +19,18 @@ const RealTimeHeader = ({ type, icon, colour, stopID, stopLocation, availableOpt
       </div>
       <div className="column">
         <h1><b>{type}</b></h1>
-        {stopID && stopLocation ? <span><b>{stopID}</b> / {<i>{stopLocation}</i>}</span> : <span>Search for a stop location...</span>}
+        {stopID && stopLocation ? <span><b>{stopID}</b> / {<i>{stopLocation}</i>}</span> :
+          <span>Search for a stop location...</span>}
       </div>
     </div>
-    <SearchBox defaultValue={stopID} availableOptions={availableOptions} changeValue={changeValue}/>
+    <nav className="level">
+      <div className="level-left">
+        <SearchBox defaultValue={stopID} availableOptions={availableOptions} changeValue={changeValue}/>
+      </div>
+      <div className="level-right">
+        {(stopID && stopLocation) && <Favourite colour={colour}/>}
+      </div>
+    </nav>
   </div>
 );
 

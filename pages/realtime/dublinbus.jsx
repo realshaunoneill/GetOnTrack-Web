@@ -60,7 +60,7 @@ const DublinBus = ({ query }) => {
 
   useEffect(() => {
     fetchData(query.stop).catch(err => {
-      // Show Error Message
+      console.error(`Unable to fetch Dublin bus API data`, err);
     });
   }, [setAllRoutes, setStopID, setStopLocationName, setStopCoords, setApiResults]);
 

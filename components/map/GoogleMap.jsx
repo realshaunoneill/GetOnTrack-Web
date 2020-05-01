@@ -1,13 +1,14 @@
 import React from 'react';
 import GoogleMapReact from 'google-map-react';
-import { usePosition } from 'use-position';
+import {usePosition} from 'use-position';
+import {useData} from '../DataContext';
 
-const AnyReactComponent = ({ text }) => (
+const Point = ({text, lat, lng, colour}) => (
   <div
     style={{
-      color: 'white',
-      background: 'grey',
-      padding: '15px 10px',
+      color: 'black',
+      background: `${colour}`,
+      padding: '5px 5px',
       display: 'inline-flex',
       textAlign: 'center',
       alignItems: 'center',
@@ -19,19 +20,47 @@ const AnyReactComponent = ({ text }) => (
   </div>
 );
 
-const GoogleMap = ({ center, colour }) => {
-  const { latitude, longitude, timestamp, accuracy, error } = usePosition();
+const getAllPoints = (stops) => {
+  try {
+    console.debug({stops})
+    const busPoints = stops.dublinBusStops.map((busStop, x) => (
+      (x < 300 && <Point
+        key={busStop.stopid}
+        text={busStop.stopid}
+        lat={busStop.latitude}
+        lng={busStop.longitude}
+        colour={'#ffcf00'}/>)
+    ));
+
+    const trainPoints = stops.irishRailStops.map((station, x) => (
+      (x < 100 && <Point
+        key={station.StationId}
+        text={station.StationId}
+        lat={station.StationLatitude}
+        lng={station.StationLongitude}
+        colour={'#05ff0c'}
+      />)
+    ));
+
+    return [...busPoints];
+  } catch (err) {
+    console.error('Unable to get all stop points', err);
+  }
+};
+
+const GoogleMap = ({center, colour}) => {
+  const {latitude, longitude, timestamp, accuracy, error} = usePosition();
+  const [state, dispatch] = useData();
+
+  const allPoints = getAllPoints(state);
+
   return (
     <GoogleMapReact
-      bootstrapURLKeys={{ key: 'AIzaSyBk7cQco6GEd2AfR3Ybq5Ppd-Fs9zbBbG8' }}
-      defaultCenter={{ lat: 53.35, lng: -6.40 }}
+      bootstrapURLKeys={{key: 'AIzaSyBk7cQco6GEd2AfR3Ybq5Ppd-Fs9zbBbG8'}}
+      defaultCenter={{lat: 53.35, lng: -6.40}}
       defaultZoom={11}
     >
-      <AnyReactComponent
-        lat={center ? center.lat : latitude}
-        lng={center ? center.lng : longitude}
-        text="Current Location"
-      />
+      {allPoints || []}
     </GoogleMapReact>
   );
 };

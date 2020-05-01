@@ -1,0 +1,64 @@
+.realtimeList {
+  padding-top: 2rem;
+  background-color: whitesmoke;
+
+  .design-container {
+    filter: drop-shadow(0px -20px 15px $colorPrimaryLight);
+
+    .design {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      margin-top: -50rem;
+      padding-top: 50rem;
+      clip-path: polygon(90% 30%, 100% 0, 100% 100%, 0 100%, 0 80%, 45% 70%, 80% 55%);
+      background-color: $colorSecondry;
+    }
+  }
+
+  .realtimelist-header {
+    margin-bottom: 4rem;
+    margin-left: 2rem;
+
+    .title {
+      font-size: 2rem;
+    }
+
+    .subtitle {
+      font-size: 1.5rem;
+    }
+  }
+
+  .realtime-container {
+    position: relative;
+    margin-top: 1rem;
+    z-index: 2;
+
+    &:not(:first-child) {
+      top: -5rem;
+
+      &:not(:nth-child(2)) {
+        top: -10rem;
+      }
+
+      &:last-child {
+        top: -15rem;
+      }
+    }
+
+    .realtime-item {
+      color: white;
+      position: relative;
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+      font-size: 2rem;
+      border-radius: 10px;
+      outline-offset: 10px;
+      -moz-outline-radius: 10px;
+
+      p {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}

@@ -6,40 +6,22 @@
 
 @import "components/header";
 @import "components/navbar";
+@import "components/footer";
 
 @import "components/search";
 @import "components/transportFooter";
 @import "components/realTime";
 @import "components/loading";
 @import "components/notification";
+@import "components/realtimeList";
+@import "components/features";
+@import "components/settingsModal";
+@import "components/googleMap";
 
-html, body, #__next, .columns {
-  height: 100%;
+html, body, #__next {
   margin: 0;
 }
 
-.header-title {
-  font-size: 4rem;
-  font-weight: bold;
-  color: black;
-
-  b {
-    color: #0c7908;
-  }
-}
-
-.columnInfo {
-  padding-right: 2.5rem;
-  padding-left: 2rem;
-  margin-top: 6rem;
-}
-
-.columnMap {
-  padding: 0;
-}
-
 // Probably shouldn't do this but ah well
-.gm-control-active, .gm-bundled-control-on-bottom, .gm-style-cc {
-  display: none;
-}
+//.gm-control-active, .gm-bundled-control-on-bottom, .gm-style-cc {display: none;}
 

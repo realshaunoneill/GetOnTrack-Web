@@ -1,18 +1,17 @@
 .navbar {
-  margin-left: 2rem;
-  margin-right: 2rem;
-  margin-top: 2rem;
+  background-color: $colorPrimary !important;
+  border-bottom: 2px solid $colorAccent;
+  padding-left: 1rem;
+  padding-right: 1rem;
 
-  box-shadow: 3px 3px 5px 6px #ccc;
-  border-radius: 5px;
 
   .navbar-title:hover {
-    background-color: transparent;
+    background-color: inherit !important;
     color: inherit;
   }
 
   .navbar-item:hover:not(.navbar-title) {
-    background-color: transparent;
+    background-color: inherit !important;
     border-bottom: 0;
   }
 
@@ -23,5 +22,9 @@
     .navbar-burger {
       color: whitesmoke;
     }
+  }
+
+  .login-picture {
+    border-radius: 100%;
   }
 }

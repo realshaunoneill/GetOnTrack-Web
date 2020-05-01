@@ -1,17 +1,10 @@
 import React from 'react';
-import { ReducerKeys, useAuth } from '../AuthContext';
+import {ReducerKeys, useAuth} from '../AuthContext';
 
 const API_URL = (process.env.NODE_ENV === 'development' ? 'http://localhost:8080' : 'https://api.getontrack.ie');
 
 const Login = () => {
   const [state, dispatch] = useAuth();
-
-  const clearUser = () => {
-    dispatch({
-      type: ReducerKeys.removeUser, payload: {}
-    });
-    console.debug('Clearing saved user on Logout', state);
-  };
 
   // Check if ID is real then we're logged in
   if (!state.userObject.id) {
@@ -19,7 +12,10 @@ const Login = () => {
   }
 
   return (
-    <div title="Logout" onClick={() => clearUser()}><b>{state.userObject.displayName}</b></div>
+    <a className="button">
+      <img className="login-picture" alt="Profile Picture" src={state.userObject.picture}/>&nbsp;
+      <b>{state.userObject.displayName}</b>
+    </a>
   );
 };
 
