@@ -48,9 +48,9 @@
       z-index: 1;
       width: 100%;
       bottom: 0;
-      padding-top: 60rem;
+      padding-top: 100%;
       //clip-path: polygon(0 100%, 0 60%, 100% 98%, 100% 100%);
-      clip-path: polygon(0 70%, 0 0, 100% 0, 100% 97%);
+      clip-path: polygon(0 85%, 0 0, 100% 0, 100% 97%);
       background-color: $colorPrimary;
     }
   }
