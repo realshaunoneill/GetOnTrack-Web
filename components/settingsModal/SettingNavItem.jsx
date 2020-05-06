@@ -21,7 +21,7 @@ const SettingsNavItem = () => {
   return (
     <Fragment>
       <div className="navbar-item" title="Settings" onClick={() => setIsSettingsOpen(true)}>
-        <FontAwesomeIcon onClick={() => setIsSettingsOpen(true)} icon={faCog}/>
+        Settings
       </div>
       <SettingsModal isActive={isSettingsOpen} closeModal={() => setIsSettingsOpen(false)} logout={userLogout}/>
     </Fragment>
